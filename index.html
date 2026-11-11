@@ -1026,7 +1026,7 @@
 <a class="btn btn-sm btn-outline-light rounded-pill px-3 d-none d-sm-inline-flex" href="tel:+19196164139" style="font-size: 0.75rem;">
 <i class="bi bi-telephone-fill me-1"></i> 919.616.4139
       </a>
-<button aria-controls="left-nav-drawer" aria-expanded="false" aria-label="Open Navigation Menu" class="menu-btn" id="open-drawer-btn">
+<button aria-controls="left-nav-drawer" aria-expanded="false" aria-label="Open Navigation Menu" class="menu-btn" id="menu-toggle-btn" onclick="document.getElementById('left-nav-drawer').classList.add('active');document.getElementById('drawer-overlay').classList.add('active');">
 <div aria-hidden="true" class="burger-icon">
 <span></span>
 <span></span>
@@ -1036,52 +1036,52 @@
 </div>
 </header>
 <!-- Left Drawer Chevron Hover/Click Tab -->
-<div aria-label="Open navigation drawer" class="left-drawer-tab" id="left-drawer-tab" role="button" tabindex="0" title="Slide out navigation">
+<div aria-label="Open navigation drawer" class="left-drawer-tab" id="left-drawer-tab" role="button" tabindex="0" title="Slide out navigation" onclick="document.getElementById('left-nav-drawer').classList.add('active');document.getElementById('drawer-overlay').classList.add('active');">
 <i class="bi bi-chevron-right fs-6"></i>
 </div>
 <!-- Left Drawer Backdrop & Drawer -->
-<div class="left-drawer-backdrop" id="drawer-backdrop"></div>
+<div class="left-drawer-backdrop" id="drawer-overlay" onclick="document.getElementById('left-nav-drawer').classList.remove('active');document.getElementById('drawer-overlay').classList.remove('active');"></div>
 <aside aria-label="Primary Navigation" class="left-drawer" id="left-nav-drawer" style="transform: translateX(100%); transition: transform 0.3s ease-in-out; left: auto !important; right: 0px !important;">
 <div class="d-flex justify-content-between align-items-center pb-3 border-bottom mb-3">
 <div>
 <div class="fw-bold font-heading text-dark" style="font-size: 1.05rem;">Nancy Grace</div>
 <div class="text-muted" style="font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;">Residential Sales • Apex, NC</div>
 </div>
-<button aria-label="Close Navigation" class="btn btn-sm btn-light rounded-circle" id="close-drawer-btn">
+<button aria-label="Close Navigation" class="btn btn-sm btn-light rounded-circle" id="drawer-close-btn" onclick="document.getElementById('left-nav-drawer').classList.remove('active');document.getElementById('drawer-overlay').classList.remove('active');">
 <i class="bi bi-x-lg"></i>
 </button>
 </div>
 <!-- Navigation links with smooth scroll & active spy -->
 <nav class="d-flex flex-column gap-1 flex-grow-1" id="drawer-nav">
-<a class="drawer-nav-link active" data-nav-target="hero" href="#hero">
+<a class="drawer-nav-link active" data-nav-target="hero" href="#hero" onclick="document.getElementById('left-nav-drawer').classList.remove('active');document.getElementById('drawer-overlay').classList.remove('active');">
 <span>Home</span>
 <i class="bi bi-arrow-right-short"></i>
 </a>
-<a class="drawer-nav-link" data-nav-target="about" href="#about">
+<a class="drawer-nav-link" data-nav-target="about" href="#about" onclick="document.getElementById('left-nav-drawer').classList.remove('active');document.getElementById('drawer-overlay').classList.remove('active');">
 <span>About</span>
 <i class="bi bi-arrow-right-short"></i>
 </a>
-<a class="drawer-nav-link" data-nav-target="listings" href="#listings">
+<a class="drawer-nav-link" data-nav-target="listings" href="#listings" onclick="document.getElementById('left-nav-drawer').classList.remove('active');document.getElementById('drawer-overlay').classList.remove('active');">
 <span>Listings</span>
 <i class="bi bi-arrow-right-short"></i>
 </a>
-<a class="drawer-nav-link" data-nav-target="areas" href="#areas">
+<a class="drawer-nav-link" data-nav-target="areas" href="#areas" onclick="document.getElementById('left-nav-drawer').classList.remove('active');document.getElementById('drawer-overlay').classList.remove('active');">
 <span>Areas</span>
 <i class="bi bi-arrow-right-short"></i>
 </a>
-<a class="drawer-nav-link" data-nav-target="services" href="#services">
+<a class="drawer-nav-link" data-nav-target="services" href="#services" onclick="document.getElementById('left-nav-drawer').classList.remove('active');document.getElementById('drawer-overlay').classList.remove('active');">
 <span>Services</span>
 <i class="bi bi-arrow-right-short"></i>
 </a>
-<a class="drawer-nav-link" data-nav-target="agents" href="#agents">
+<a class="drawer-nav-link" data-nav-target="agents" href="#agents" onclick="document.getElementById('left-nav-drawer').classList.remove('active');document.getElementById('drawer-overlay').classList.remove('active');">
 <span>Agents</span>
 <i class="bi bi-arrow-right-short"></i>
 </a>
-<a class="drawer-nav-link" data-nav-target="reviews" href="#reviews">
+<a class="drawer-nav-link" data-nav-target="reviews" href="#reviews" onclick="document.getElementById('left-nav-drawer').classList.remove('active');document.getElementById('drawer-overlay').classList.remove('active');">
 <span>Reviews</span>
 <i class="bi bi-arrow-right-short"></i>
 </a>
-<a class="drawer-nav-link" data-nav-target="contact" href="#contact">
+<a class="drawer-nav-link" data-nav-target="contact" href="#contact" onclick="document.getElementById('left-nav-drawer').classList.remove('active');document.getElementById('drawer-overlay').classList.remove('active');">
 <span>Contact</span>
 <i class="bi bi-arrow-right-short"></i>
 </a>
