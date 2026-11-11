@@ -1,26 +1,24 @@
-<!DOCTYPE html>
-
-<html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Houses for Sale in Apex &amp; Cary NC | Nancy Grace Realtor</title>
-<meta content="Discover premier homes for sale in Apex, Cary, and Triangle NC with Nancy Grace, top producer and trusted residential realtor. Book a viewing today." name="description"/>
-<link href="https://www.nancygracehomes.com/" rel="canonical"/>
-<meta content="#1a2b3c" name="theme-color"/>
+<meta content="Discover premier homes for sale in Apex, Cary, and Triangle NC with Nancy Grace, top producer and trusted residential realtor. Book a viewing today." name="description">
+<link href="https://www.nancygracehomes.com/" rel="canonical">
+<meta content="#1a2b3c" name="theme-color">
 <!-- Open Graph / Twitter -->
-<meta content="website" property="og:type"/>
-<meta content="Houses for Sale in Apex &amp; Triangle NC | Nancy Grace Realtor" property="og:title"/>
-<meta content="Award-winning residential realtor Nancy Grace offering boutique real estate service in Apex, Cary, and Raleigh." property="og:description"/>
-<meta content="https://lh3.googleusercontent.com/aida-public/AB6AXuBIJHG6EWWlw9P2vJRwcLcFfSGwBRw_t6IpAPQtSIpYvJm0s8cUBQybq1q3aNBpPHCGPIdrxwVVBt0u-HrRIx9kU8-7SSzGnCGKzmITKESJYg9DPnvgy49GH8KtgFNuoWy7QzwdHGmNr48ZxQG2QPIuFbKvh0MwVjUJxKUiCsuALu3aEak3ymvyPdoV3c0vftnMM_4-gjKhSW5JKyKecxJLSV8QqK-vcGnaoaUHEVy20jgpA2couJjAng" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/>
+<meta content="website" property="og:type">
+<meta content="Houses for Sale in Apex &amp; Triangle NC | Nancy Grace Realtor" property="og:title">
+<meta content="Award-winning residential realtor Nancy Grace offering boutique real estate service in Apex, Cary, and Raleigh." property="og:description">
+<meta content="https://lh3.googleusercontent.com/aida-public/AB6AXuBIJHG6EWWlw9P2vJRwcLcFfSGwBRw_t6IpAPQtSIpYvJm0s8cUBQybq1q3aNBpPHCGPIdrxwVVBt0u-HrRIx9kU8-7SSzGnCGKzmITKESJYg9DPnvgy49GH8KtgFNuoWy7QzwdHGmNr48ZxQG2QPIuFbKvh0MwVjUJxKUiCsuALu3aEak3ymvyPdoV3c0vftnMM_4-gjKhSW5JKyKecxJLSV8QqK-vcGnaoaUHEVy20jgpA2couJjAng" property="og:image">
+<meta content="summary_large_image" name="twitter:card">
 <!-- Google Fonts: Plus Jakarta Sans & Inter -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
 <!-- Bootstrap 5 CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style>
     :root {
@@ -438,6 +436,7 @@
       position: relative;
       height: 210px;
       overflow: hidden;
+      cursor: pointer;
     }
     .listing-img-wrap img {
       width: 100%;
@@ -447,6 +446,38 @@
     }
     .listing-card:hover .listing-img-wrap img {
       transform: scale(1.06);
+    }
+    .listing-preview-cue {
+      position: absolute;
+      inset: 0;
+      background: rgba(18, 33, 48, 0.4);
+      backdrop-filter: blur(2px);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+    .listing-card:hover .listing-preview-cue {
+      opacity: 1;
+    }
+    .listing-preview-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
     .status-badge {
       position: absolute;
@@ -461,6 +492,7 @@
       background: rgba(18, 33, 48, 0.88);
       color: #ffffff;
       backdrop-filter: blur(4px);
+      z-index: 2;
     }
     .status-badge.contract {
       background: rgba(196, 130, 63, 0.95);
@@ -683,7 +715,7 @@
       position: fixed;
       inset: 0;
       z-index: 1070;
-      background: rgba(10, 15, 25, 0.92);
+      background: rgba(10, 15, 25, 0.94);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       display: flex;
@@ -693,6 +725,7 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 20px;
     }
     #galleryLightbox.open {
       opacity: 1;
@@ -700,8 +733,8 @@
     }
     .lightbox-stage {
       position: relative;
-      max-width: 90vw;
-      max-height: 82vh;
+      max-width: 92vw;
+      max-height: 70vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -713,7 +746,7 @@
     }
     .lightbox-img-element {
       max-width: 90vw;
-      max-height: 76vh;
+      max-height: 65vh;
       width: auto;
       height: auto;
       object-fit: contain;
@@ -737,6 +770,7 @@
       backdrop-filter: blur(8px);
       transition: all 0.2s ease;
       user-select: none;
+      flex-shrink: 0;
     }
     .lightbox-nav-btn:hover {
       background: var(--color-accent);
@@ -746,8 +780,8 @@
     }
     .lightbox-close-btn {
       position: absolute;
-      top: 20px;
-      right: 24px;
+      top: 18px;
+      right: 20px;
       width: 42px;
       height: 42px;
       border-radius: 50%;
@@ -765,6 +799,23 @@
     .lightbox-close-btn:hover {
       background: rgba(255, 255, 255, 0.28);
       transform: rotate(90deg);
+    }
+
+    /* Lightbox Bottom Details Bar */
+    .lightbox-details-bar {
+      margin-top: 14px;
+      background: rgba(18, 33, 48, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 14px;
+      padding: 12px 20px;
+      max-width: 90vw;
+      width: 580px;
+      color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
     /* Reduced Motion */
@@ -818,20 +869,40 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "RealEstateListing",
-              "name": "Bella Casa Modern Craftsman",
-              "price": "795000",
+              "name": "Bella Casa Craftsman",
+              "price": "789000",
               "priceCurrency": "USD",
-              "address": "Apex, NC"
+              "address": "Bella Casa, Apex NC"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "RealEstateListing",
-              "name": "Preston Country Club Estate",
-              "price": "1150000",
+              "name": "Historic District Colonial",
+              "price": "845000",
+              "priceCurrency": "USD",
+              "address": "Downtown Apex"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "RealEstateListing",
+              "name": "Weatherstone Modern Traditional",
+              "price": "625000",
               "priceCurrency": "USD",
               "address": "Cary, NC"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "RealEstateListing",
+              "name": "Preston Golf Estate",
+              "price": "1120000",
+              "priceCurrency": "USD",
+              "address": "Preston, Cary"
             }
           }
         ]
@@ -940,7 +1011,7 @@
 <main id="main-content">
 <!-- HERO SECTION -->
 <section aria-labelledby="hero-heading" class="hero-section" id="hero" style="background: linear-gradient(135deg, rgb(13, 23, 33) 0%, rgb(18, 33, 48) 50%, rgb(24, 43, 61) 100%); min-height: auto; padding-top: 120px; padding-bottom: 70px; display: flex; align-items: center;">
-<div class="container hero-content"><div class="row align-items-center g-4 g-lg-5"><div class="col-12 col-md-6 reveal-elem is-visible" id="hero-text-block"><div class="mb-3"><span class="star-badge-row"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><span class="ms-1 fw-semibold">5.0 (98 reviews)</span></span></div><h1 class="hero-headline mb-3" id="hero-heading">Premier homes in Apex.<span class="visually-hidden">houses for sale in Apex NC, residential real estate specialist Nancy Grace</span></h1><p class="hero-subline mb-4" style="font-size: 1.05rem; line-height: 1.5; color: rgba(255, 255, 255, 0.82);">Trusted guidance for buying and selling exceptional Triangle properties.</p><div class="d-flex flex-wrap gap-2 align-items-center"><a class="btn-brand-primary" href="#contact">Book a viewing</a><a class="btn btn-outline-light rounded-pill px-3 py-2 fw-semibold btn-hero-secondary" href="#listings" style="font-size: 0.88rem;">Explore homes</a></div></div><div class="col-12 col-md-6 reveal-elem is-visible"><div class="rounded-3 hero-photo-card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: rgba(0, 0, 0, 0.5) 0px 16px 40px -10px; backdrop-filter: blur(8px); max-width: 440px; margin: 0px auto; overflow: hidden; border-radius: 12px;"><div class="rounded-3 overflow-hidden position-relative" style="position: relative; width: 100%; height: auto;"><img alt="Nancy Grace Realtor Top Producer Apex Cary NC" class="w-100" fetchpriority="high" height="733" id="hero-bg-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZJbeQpae54BOe6bauqD5sj8KkPk6iBca_DvlkeqR7sZLUCgn9eUEeLKPa47xNivF79zpYr5QhR7zC6741VjMBsnHGs1ui9M6EV9yE04D-vMu66m3w1wue54HIZApbpeAbu1i5_1n7_wqqdm2yYcSQ5Q28IuGKMlH_G7xfrIx0zZU_HevbRyxpQAM1epgz_nUZikIYcYfYBU2FS2e3VdmUMp9CYSwbt2bwOei67Q-f1gi2XTOT5EcSBQ" style="width: 100%; height: auto; display: block; object-fit: contain; transform: none;" width="548"/></div></div></div></div></div>
+<div class="container hero-content"><div class="row align-items-center g-4 g-lg-5"><div class="col-12 col-md-6 reveal-elem is-visible" id="hero-text-block"><div class="mb-3"><span class="star-badge-row"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><span class="ms-1 fw-semibold">5.0 (98 reviews)</span></span></div><h1 class="hero-headline mb-3" id="hero-heading">Premier homes in Apex.<span class="visually-hidden">houses for sale in Apex NC, residential real estate specialist Nancy Grace</span></h1><p class="hero-subline mb-4" style="font-size: 1.05rem; line-height: 1.5; color: rgba(255, 255, 255, 0.82);">Trusted guidance for buying and selling exceptional Triangle properties.</p><div class="d-flex flex-wrap gap-2 align-items-center"><a class="btn-brand-primary" href="#contact">Book a viewing</a><a class="btn btn-outline-light rounded-pill px-3 py-2 fw-semibold btn-hero-secondary" href="#listings" style="font-size: 0.88rem;">Explore homes</a></div></div><div class="col-12 col-md-6 reveal-elem is-visible"><div class="rounded-3 hero-photo-card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: rgba(0, 0, 0, 0.5) 0px 16px 40px -10px; backdrop-filter: blur(8px); max-width: 440px; margin: 0px auto; overflow: hidden; border-radius: 12px;"><div class="rounded-3 overflow-hidden position-relative" style="position: relative; width: 100%; height: auto;"><img alt="Nancy Grace Realtor Top Producer Apex Cary NC" class="w-100" fetchpriority="high" height="733" id="hero-bg-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZJbeQpae54BOe6bauqD5sj8KkPk6iBca_DvlkeqR7sZLUCgn9eUEeLKPa47xNivF79zpYr5QhR7zC6741VjMBsnHGs1ui9M6EV9yE04D-vMu66m3w1wue54HIZApbpeAbu1i5_1n7_wqqdm2yYcSQ5Q28IuGKMlH_G7xfrIx0zZU_HevbRyxpQAM1epgz_nUZikIYcYfYBU2FS2e3VdmUMp9CYSwbt2bwOei67Q-f1gi2XTOT5EcSBQ" style="width: 100%; height: auto; display: block; object-fit: contain; transform: none;" width="548"></div></div></div></div></div>
 </section>
 <!-- ABOUT SECTION -->
 <section aria-labelledby="about-heading" class="bg-white" id="about">
@@ -959,29 +1030,29 @@
 </div>
 <!-- Community & Story Showcase Gallery with Clickable Lightbox -->
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
-<div aria-label="View Under contract home in Apex in high resolution" class="gallery-item-wrapper group" onclick="openGalleryLightbox(0)" role="button" tabindex="0">
-<img alt="Under contract home in Apex" class="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWTgpFY7VCQas5Gg2XwTa76nwfX2FjMZTE4B5TP0B8DMK551DbA_ReiTtAcqthx6vBSX8LdKN-S1S_Suo5exJpW7_euxHBwSUh3lfTiOzVH2EGEGyEE3PpNUEirFEWrFLtFEyZ6h6gAOOFPd0snQBJct2ZmAKcHpUnvekXDw3bnLk8QXgz3GhqJB_ICRnZnWSTh__wYPb35vAlgCAh_XACQR84mnzROcN5qTPFxurB6njy7D3IB2knLg"/>
+<div aria-label="View Under contract home in Apex in high resolution" class="gallery-item-wrapper group" onclick="openGalleryLightbox(0, 'community')" role="button" tabindex="0">
+<img alt="Under contract home in Apex" class="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWTgpFY7VCQas5Gg2XwTa76nwfX2FjMZTE4B5TP0B8DMK551DbA_ReiTtAcqthx6vBSX8LdKN-S1S_Suo5exJpW7_euxHBwSUh3lfTiOzVH2EGEGyEE3PpNUEirFEWrFLtFEyZ6h6gAOOFPd0snQBJct2ZmAKcHpUnvekXDw3bnLk8QXgz3GhqJB_ICRnZnWSTh__wYPb35vAlgCAh_XACQR84mnzROcN5qTPFxurB6njy7D3IB2knLg">
 <div class="gallery-overlay-badge">
 <span class="gallery-overlay-icon"><i class="bi bi-arrows-fullscreen"></i></span>
 <span class="text-xs font-semibold drop-shadow">Expand photo</span>
 </div>
 </div>
-<div aria-label="View Nancy Grace team mascot at listing in high resolution" class="gallery-item-wrapper group" onclick="openGalleryLightbox(1)" role="button" tabindex="0">
-<img alt="Nancy Grace team mascot at listing" class="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA66w1Taf2mool4be4NKXlviDnjX_kdrMFSwnQlpymaJfyJ8dXRhqWCmyJQql7BMwz3epASknxg5s_SJU40icjLVAg0H6-sQ79baJRsAeBBZdtSNtkrSFq4EciBv8PIHky0asvDcGQXY4sAm1Aps1YIlBdOqR29Uq-wayqwubhFo4e_VMONo9RV822dVGI6mgYdAz2kWdgwvvMu8De_vpQD4QkL6I66AL1VOjQttMWFpw9uSlX-ZDsEdg"/>
+<div aria-label="View Nancy Grace team mascot at listing in high resolution" class="gallery-item-wrapper group" onclick="openGalleryLightbox(1, 'community')" role="button" tabindex="0">
+<img alt="Nancy Grace team mascot at listing" class="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA66w1Taf2mool4be4NKXlviDnjX_kdrMFSwnQlpymaJfyJ8dXRhqWCmyJQql7BMwz3epASknxg5s_SJU40icjLVAg0H6-sQ79baJRsAeBBZdtSNtkrSFq4EciBv8PIHky0asvDcGQXY4sAm1Aps1YIlBdOqR29Uq-wayqwubhFo4e_VMONo9RV822dVGI6mgYdAz2kWdgwvvMu8De_vpQD4QkL6I66AL1VOjQttMWFpw9uSlX-ZDsEdg">
 <div class="gallery-overlay-badge">
 <span class="gallery-overlay-icon"><i class="bi bi-arrows-fullscreen"></i></span>
 <span class="text-xs font-semibold drop-shadow">Expand photo</span>
 </div>
 </div>
-<div aria-label="View Downtown Apex holiday atmosphere in high resolution" class="gallery-item-wrapper group" onclick="openGalleryLightbox(2)" role="button" tabindex="0">
-<img alt="Downtown Apex holiday atmosphere" class="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj2O1MpSlqD853dsTpfD87_OYeYBTPcjpYRKGPwP-k1zn2kkHVXdcuZL-fRXMrXBTvJnrhlMEqvpspjUXAT2a6jWdB2yIL8UKmlmtVXG52ifqeGJKfgq0EQe06F7X-zdJu9sO66H3zgTJU1SNqk6nMe15NyWPdBfpRS-mjbko9vGamedHQRhv6EQpfhxrBq26yro6Sf8V0s_UNx6BfyHJ0ZLpwR8IQfHGkn1QTyQATIAWFTp63jp4pSg"/>
+<div aria-label="View Downtown Apex holiday atmosphere in high resolution" class="gallery-item-wrapper group" onclick="openGalleryLightbox(2, 'community')" role="button" tabindex="0">
+<img alt="Downtown Apex holiday atmosphere" class="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj2O1MpSlqD853dsTpfD87_OYeYBTPcjpYRKGPwP-k1zn2kkHVXdcuZL-fRXMrXBTvJnrhlMEqvpspjUXAT2a6jWdB2yIL8UKmlmtVXG52ifqeGJKfgq0EQe06F7X-zdJu9sO66H3zgTJU1SNqk6nMe15NyWPdBfpRS-mjbko9vGamedHQRhv6EQpfhxrBq26yro6Sf8V0s_UNx6BfyHJ0ZLpwR8IQfHGkn1QTyQATIAWFTp63jp4pSg">
 <div class="gallery-overlay-badge">
 <span class="gallery-overlay-icon"><i class="bi bi-arrows-fullscreen"></i></span>
 <span class="text-xs font-semibold drop-shadow">Expand photo</span>
 </div>
 </div>
-<div aria-label="View Community celebration in high resolution" class="gallery-item-wrapper group" onclick="openGalleryLightbox(3)" role="button" tabindex="0">
-<img alt="Community celebration" class="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9LNaCn6Y4ChZqopKxexxyFuOnmT4EraawrW9Kb8DmUJIMkyJWSpc_DY2wnaSfwNqUJToZI0Xviof2rGFH2QyS2ocE--NUwxirxQiNo1pLFJtKVWL7NvmjivUydJVnBfwTXsBrvrAnYDkME32nLf3jTkwDWiBqhR73SdkMXW6kl0n03Uk_qH8uPQtMOJq9zQnB0UJK4TLNlRYHERVGoYkCjkO-2BXD2oJd1V9FfusTsgKVXFNFOr2kEg"/>
+<div aria-label="View Community celebration in high resolution" class="gallery-item-wrapper group" onclick="openGalleryLightbox(3, 'community')" role="button" tabindex="0">
+<img alt="Community celebration" class="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9LNaCn6Y4ChZqopKxexxyFuOnmT4EraawrW9Kb8DmUJIMkyJWSpc_DY2wnaSfwNqUJToZI0Xviof2rGFH2QyS2ocE--NUwxirxQiNo1pLFJtKVWL7NvmjivUydJVnBfwTXsBrvrAnYDkME32nLf3jTkwDWiBqhR73SdkMXW6kl0n03Uk_qH8uPQtMOJq9zQnB0UJK4TLNlRYHERVGoYkCjkO-2BXD2oJd1V9FfusTsgKVXFNFOr2kEg">
 <div class="gallery-overlay-badge">
 <span class="gallery-overlay-icon"><i class="bi bi-arrows-fullscreen"></i></span>
 <span class="text-xs font-semibold drop-shadow">Expand photo</span>
@@ -1040,23 +1111,25 @@
             </p>
 </div>
 </div>
-<div class="row g-3">
-<!-- SAMPLE: replace with real data -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- Listing Card 1 -->
-<div class="col-12 reveal-elem is-visible">
-<article class="listing-card" onclick="openListingModal('124 Brookgreen Way', '$789,000', 'Bella Casa, Apex NC', '4 Beds', '3.5 Baths', '3,210 sq ft', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAq4fN9-uQ6dtniGVzabNTY6vyELw-j4UaO9V4SDLFKHi29XWnpHK111gxHO6I2zUwfvWTUuEeY_U8vlyICv7SkG24W5quiacbgLkoFyWwNJvolDtxO2Iaf83i078aQr-1vIQB8vKqVcgmtE9YH_T45nK8jW3x0mVRaX0BFnayIiu8yQc47NqH4ZlkjXcO8J5g37ntD0iXIc-nE9Q0ZvqrS4n6b2AWdSiYemDhuxfly0NA9gi2CxlCnCQ', 'Magnificent craftsman residence with screened porch, primary suite on main, and landscaped yard.')">
-<div class="listing-img-wrap">
-<img alt="Bella Casa Craftsman home exterior" class="w-full h-48 object-cover rounded-t-xl" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjpsRk-LcXGGxCm86s6Iot3YRLHIUwWb1XbobJvnh-6TLFs_JVCO05b3T9jE26i1Q4kyrMn2p7_dLCYwq-jRxVF-tWjRo7mmy41GQb2rOn3-1WWxMDvxw7fpC43gnvCupLUNM9Pvtt0VLFny9-ldUgm4CbBfzc0OQglBg0j5dzngYgU9eTpsoiWwjV8h6Q-NWr4n5aHEjg8RD0QuzHWskHw8RDsE_7qfR68C61Gxt7"/>
+<div class="reveal-elem is-visible">
+<article aria-label="Preview Bella Casa Craftsman in high resolution" class="listing-card h-full flex flex-col" onclick="openGalleryLightbox(0, 'listing')" role="button" tabindex="0">
+<div class="listing-img-wrap" style="height: 220px;">
+<img alt="Bella Casa Craftsman home exterior" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjpsRk-LcXGGxCm86s6Iot3YRLHIUwWb1XbobJvnh-6TLFs_JVCO05b3T9jE26i1Q4kyrMn2p7_dLCYwq-jRxVF-tWjRo7mmy41GQb2rOn3-1WWxMDvxw7fpC43gnvCupLUNM9Pvtt0VLFny9-ldUgm4CbBfzc0OQglBg0j5dzngYgU9eTpsoiWwjV8h6Q-NWr4n5aHEjg8RD0QuzHWskHw8RDsE_7qfR68C61Gxt7">
 <span class="status-badge contract">Under contract</span>
+<div class="listing-preview-cue">
+<span class="listing-preview-icon"><i class="bi bi-arrows-fullscreen"></i></span>
+<span>Preview Photos &amp; Details</span>
 </div>
-<div class="p-3">
+</div>
+<div class="p-3 flex flex-col flex-grow">
 <div class="d-flex justify-content-between align-items-baseline mb-1">
 <span class="listing-price">$789,000</span>
 <span class="text-muted small">Apex, NC</span>
 </div>
-<!-- 1 to 4 words title -->
 <h3 class="h6 fw-bold mb-2">Bella Casa Craftsman</h3>
-<div class="listing-meta-row">
+<div class="listing-meta-row mt-auto pt-2">
 <span><i class="bi bi-door-closed"></i> 4 Beds</span>
 <span><i class="bi bi-droplet"></i> 3.5 Baths</span>
 <span><i class="bi bi-aspect-ratio"></i> 3,210 sq ft</span>
@@ -1065,19 +1138,23 @@
 </article>
 </div>
 <!-- Listing Card 2 -->
-<div class="col-12 reveal-elem is-visible">
-<article class="listing-card" onclick="openListingModal('408 North Salem St', '$845,000', 'Historic Downtown Apex', '3 Beds', '3 Baths', '2,640 sq ft', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCWXASFtw4SoyrYGb5GZhC-6JDG3AVzEhD8pH3Yas0gHp1OdsD-idFRC0fnzlDMgpXBNapFYQyb2ICuPUlG2PoAJbeVPeqT9gbrFd82JVJvDLQAij7ccuYFhRUUmgjd3DbLM4AG4aklX09sXEDJeSekdchIDkRHdMSuJuRB8luAV153qfyhyxZ0ysy9T-hjAwlWa6_W2ctmUjEu9EMBTpFX2SkpWZkt4_s1vMaVJYGfYK_ppG6uNYiMvg', 'Historic charm meets turnkey interior renovations steps from Downtown Apex cafes and parks.')">
-<div class="listing-img-wrap">
-<img alt="Historic District Colonial home exterior" class="w-full h-48 object-cover rounded-t-xl" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx_P0TePXpWvq5NqFjDixTZaWxS0vPLuzyq3CJfDlBz2HYZKaez2TR6Bw8dYb1pPaU5KjC8qLspp4sWnBq2Km_ob7oXrv2IX5kExXLk3LZRIDGo3LE4zNADVhW0PlNMgGA9IKDdvKy9M34gAE0sG2yjiHseWrHD5u0mbHmZF036T6zyxlAEPtuYSmBa_HhDHqhtv_OgfWVH2rYYGALY56yVKu4KE4jbbQt9ZlNZtTH"/>
+<div class="reveal-elem is-visible">
+<article aria-label="Preview Historic District Colonial in high resolution" class="listing-card h-full flex flex-col" onclick="openGalleryLightbox(1, 'listing')" role="button" tabindex="0">
+<div class="listing-img-wrap" style="height: 220px;">
+<img alt="Historic District Colonial home exterior" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx_P0TePXpWvq5NqFjDixTZaWxS0vPLuzyq3CJfDlBz2HYZKaez2TR6Bw8dYb1pPaU5KjC8qLspp4sWnBq2Km_ob7oXrv2IX5kExXLk3LZRIDGo3LE4zNADVhW0PlNMgGA9IKDdvKy9M34gAE0sG2yjiHseWrHD5u0mbHmZF036T6zyxlAEPtuYSmBa_HhDHqhtv_OgfWVH2rYYGALY56yVKu4KE4jbbQt9ZlNZtTH">
 <span class="status-badge">Just listed</span>
+<div class="listing-preview-cue">
+<span class="listing-preview-icon"><i class="bi bi-arrows-fullscreen"></i></span>
+<span>Preview Photos &amp; Details</span>
 </div>
-<div class="p-3">
+</div>
+<div class="p-3 flex flex-col flex-grow">
 <div class="d-flex justify-content-between align-items-baseline mb-1">
 <span class="listing-price">$845,000</span>
 <span class="text-muted small">Downtown Apex</span>
 </div>
 <h3 class="h6 fw-bold mb-2">Historic District Colonial</h3>
-<div class="listing-meta-row">
+<div class="listing-meta-row mt-auto pt-2">
 <span><i class="bi bi-door-closed"></i> 3 Beds</span>
 <span><i class="bi bi-droplet"></i> 3 Baths</span>
 <span><i class="bi bi-aspect-ratio"></i> 2,640 sq ft</span>
@@ -1086,19 +1163,23 @@
 </article>
 </div>
 <!-- Listing Card 3 -->
-<div class="col-12 reveal-elem is-visible">
-<article class="listing-card" onclick="openListingModal('712 Weatherstone Pl', '$625,000', 'Cary Parkway, Cary NC', '3 Beds', '2.5 Baths', '2,180 sq ft', 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfmTM7pracZeDAv0ebRDvNZPRUoQc7OV-c9FrK1OkVcDPIR4Zgxz5jBQN4Tx_zuI-uAfOCmgl4GrnX53RZ6ks8zs_1HLyV0eppCrJL-xm_ovTx5RZ5WwujS-yHASiQAQR97eZ3Sc8l39NDY2LTgKn5XPhTZ6o5-4WHkuV89rAJBF1JaqR2XNgVaUVOLQMv_s8Ob09vfiQ3BI_w48sFN3OOFMbYJWN3xTWK2EfDNlvsE2BOcV-v-gYHEQ', 'Serene tree-lined suburban sanctuary with vaulted ceilings and private backyard deck.')">
-<div class="listing-img-wrap">
-<img alt="Weatherstone Modern Traditional home exterior" class="w-full h-48 object-cover rounded-t-xl" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6QQwK0GI70jJNFOzOSld_tekQc1ED9N4aJxzfEAACpmt5LuxlKtOSkoR-GFXWYgO2c6vXlq1MHMirfC54z3h0E3WTQMX-lt1dj5X0p7BxO9EGe9UR-LFCHynpAIEgxJr0Fbtdh7iZX_G6Z1hjdbgNG-jRj3Xzn4JG41deL44cag2cA5MaGi1xgfxl96foXlmVlVd4x_8TrM1e90mN1C6zF4P5a_q7qNwMTep-fNRw"/>
+<div class="reveal-elem is-visible">
+<article aria-label="Preview Weatherstone Modern Traditional in high resolution" class="listing-card h-full flex flex-col" onclick="openGalleryLightbox(2, 'listing')" role="button" tabindex="0">
+<div class="listing-img-wrap" style="height: 220px;">
+<img alt="Weatherstone Modern Traditional home exterior" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6QQwK0GI70jJNFOzOSld_tekQc1ED9N4aJxzfEAACpmt5LuxlKtOSkoR-GFXWYgO2c6vXlq1MHMirfC54z3h0E3WTQMX-lt1dj5X0p7BxO9EGe9UR-LFCHynpAIEgxJr0Fbtdh7iZX_G6Z1hjdbgNG-jRj3Xzn4JG41deL44cag2cA5MaGi1xgfxl96foXlmVlVd4x_8TrM1e90mN1C6zF4P5a_q7qNwMTep-fNRw">
 <span class="status-badge">New price</span>
+<div class="listing-preview-cue">
+<span class="listing-preview-icon"><i class="bi bi-arrows-fullscreen"></i></span>
+<span>Preview Photos &amp; Details</span>
 </div>
-<div class="p-3">
+</div>
+<div class="p-3 flex flex-col flex-grow">
 <div class="d-flex justify-content-between align-items-baseline mb-1">
 <span class="listing-price">$625,000</span>
 <span class="text-muted small">Cary, NC</span>
 </div>
 <h3 class="h6 fw-bold mb-2">Weatherstone Modern Traditional</h3>
-<div class="listing-meta-row">
+<div class="listing-meta-row mt-auto pt-2">
 <span><i class="bi bi-door-closed"></i> 3 Beds</span>
 <span><i class="bi bi-droplet"></i> 2.5 Baths</span>
 <span><i class="bi bi-aspect-ratio"></i> 2,180 sq ft</span>
@@ -1107,19 +1188,23 @@
 </article>
 </div>
 <!-- Listing Card 4 -->
-<div class="col-12 reveal-elem is-visible">
-<article class="listing-card" onclick="openListingModal('1504 High House Rd', '$1,120,000', 'Preston, Cary NC', '5 Beds', '4.5 Baths', '4,350 sq ft', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAjczdg_ox5Hsl-mxOQvuZ_toArSm5BqiTsfaVjSYqGGny7J2146Z56VVntVMYR4-vp86pxWsB8lJXWkNYs-MQeC7PgocjhsrHXu4LAYbSGJ2dd_U3de2Rb7yDzmEUv9ZO5epGzMELkzvjZkt1g1kiZ3cR3NyUn_Qda8obdG_Om-y9-vs5NP3HYAVjrD1RIHXRNhlAfIEVOAI1Oyiei5ThaFuTP-Z4AtDpTMSApzhMkp0cToBgACEspPQ', 'Executive golf community estate with gourmet chef kitchen and multi-tier deck.')">
-<div class="listing-img-wrap">
-<img alt="Preston Golf Estate luxury home exterior" class="w-full h-48 object-cover rounded-t-xl" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD762UR5oiISEhmQcQL218nISbGjE8qUvoAvnpgElprq56XHbczSA3g_3H7ecUy2Dle9U9uif42FPx4sCIDpyZZdXXvLvXictlPQvjhsmY6aM_mulXdAs-eaoezr9TEl5IhithKi44HvOnboWRjQAhIQOQozUwP9a0c0ZiI4pKSd61375vO3hiZ6JCTNifZo-g-ThGHFs6x6ak9qQUmrhPSXLKUp68xkKeOR-fNqX6O"/>
+<div class="reveal-elem is-visible">
+<article aria-label="Preview Preston Golf Estate in high resolution" class="listing-card h-full flex flex-col" onclick="openGalleryLightbox(3, 'listing')" role="button" tabindex="0">
+<div class="listing-img-wrap" style="height: 220px;">
+<img alt="Preston Golf Estate luxury home exterior" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD762UR5oiISEhmQcQL218nISbGjE8qUvoAvnpgElprq56XHbczSA3g_3H7ecUy2Dle9U9uif42FPx4sCIDpyZZdXXvLvXictlPQvjhsmY6aM_mulXdAs-eaoezr9TEl5IhithKi44HvOnboWRjQAhIQOQozUwP9a0c0ZiI4pKSd61375vO3hiZ6JCTNifZo-g-ThGHFs6x6ak9qQUmrhPSXLKUp68xkKeOR-fNqX6O">
 <span class="status-badge">Featured</span>
+<div class="listing-preview-cue">
+<span class="listing-preview-icon"><i class="bi bi-arrows-fullscreen"></i></span>
+<span>Preview Photos &amp; Details</span>
 </div>
-<div class="p-3">
+</div>
+<div class="p-3 flex flex-col flex-grow">
 <div class="d-flex justify-content-between align-items-baseline mb-1">
 <span class="listing-price">$1,120,000</span>
 <span class="text-muted small">Preston, Cary</span>
 </div>
 <h3 class="h6 fw-bold mb-2">Preston Golf Estate</h3>
-<div class="listing-meta-row">
+<div class="listing-meta-row mt-auto pt-2">
 <span><i class="bi bi-door-closed"></i> 5 Beds</span>
 <span><i class="bi bi-droplet"></i> 4.5 Baths</span>
 <span><i class="bi bi-aspect-ratio"></i> 4,350 sq ft</span>
@@ -1128,7 +1213,7 @@
 </article>
 </div>
 </div>
-<div class="text-center mt-4">
+<div class="text-center mt-5">
 <a class="btn-brand-primary" href="#contact">Book a viewing</a>
 </div>
 </div>
@@ -1148,7 +1233,7 @@
 <!-- SAMPLE: replace with real data -->
 <div class="col-12 reveal-elem is-visible">
 <div class="area-card" onclick="location.href='#contact'">
-<img alt="Downtown Apex community street" height="708" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj2O1MpSlqD853dsTpfD87_OYeYBTPcjpYRKGPwP-k1zn2kkHVXdcuZL-fRXMrXBTvJnrhlMEqvpspjUXAT2a6jWdB2yIL8UKmlmtVXG52ifqeGJKfgq0EQe06F7X-zdJu9sO66H3zgTJU1SNqk6nMe15NyWPdBfpRS-mjbko9vGamedHQRhv6EQpfhxrBq26yro6Sf8V0s_UNx6BfyHJ0ZLpwR8IQfHGkn1QTyQATIAWFTp63jp4pSg" width="627"/>
+<img alt="Downtown Apex community street" height="708" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj2O1MpSlqD853dsTpfD87_OYeYBTPcjpYRKGPwP-k1zn2kkHVXdcuZL-fRXMrXBTvJnrhlMEqvpspjUXAT2a6jWdB2yIL8UKmlmtVXG52ifqeGJKfgq0EQe06F7X-zdJu9sO66H3zgTJU1SNqk6nMe15NyWPdBfpRS-mjbko9vGamedHQRhv6EQpfhxrBq26yro6Sf8V0s_UNx6BfyHJ0ZLpwR8IQfHGkn1QTyQATIAWFTp63jp4pSg" width="627">
 <div class="area-card-body">
 <h3 class="area-card-title">Apex, NC</h3>
 <p class="area-card-note">Ranked #1 Best Place to Live in America.</p>
@@ -1157,7 +1242,7 @@
 </div>
 <div class="col-12 reveal-elem is-visible">
 <div class="area-card" onclick="location.href='#contact'">
-<img alt="Cary greenway and executive residences" height="703" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6QQwK0GI70jJNFOzOSld_tekQc1ED9N4aJxzfEAACpmt5LuxlKtOSkoR-GFXWYgO2c6vXlq1MHMirfC54z3h0E3WTQMX-lt1dj5X0p7BxO9EGe9UR-LFCHynpAIEgxJr0Fbtdh7iZX_G6Z1hjdbgNG-jRj3Xzn4JG41deL44cag2cA5MaGi1xgfxl96foXlmVlVd4x_8TrM1e90mN1C6zF4P5a_q7qNwMTep-fNRw" width="589"/>
+<img alt="Cary greenway and executive residences" height="703" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6QQwK0GI70jJNFOzOSld_tekQc1ED9N4aJxzfEAACpmt5LuxlKtOSkoR-GFXWYgO2c6vXlq1MHMirfC54z3h0E3WTQMX-lt1dj5X0p7BxO9EGe9UR-LFCHynpAIEgxJr0Fbtdh7iZX_G6Z1hjdbgNG-jRj3Xzn4JG41deL44cag2cA5MaGi1xgfxl96foXlmVlVd4x_8TrM1e90mN1C6zF4P5a_q7qNwMTep-fNRw" width="589">
 <div class="area-card-body">
 <h3 class="area-card-title">Cary, NC</h3>
 <p class="area-card-note">Premier parks, dining, and executive neighborhoods.</p>
@@ -1166,7 +1251,7 @@
 </div>
 <div class="col-12 reveal-elem is-visible">
 <div class="area-card" onclick="location.href='#contact'">
-<img alt="Holly Springs suburban homes" height="715" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjpsRk-LcXGGxCm86s6Iot3YRLHIUwWb1XbobJvnh-6TLFs_JVCO05b3T9jE26i1Q4kyrMn2p7_dLCYwq-jRxVF-tWjRo7mmy41GQb2rOn3-1WWxMDvxw7fpC43gnvCupLUNM9Pvtt0VLFny9-ldUgm4CbBfzc0OQglBg0j5dzngYgU9eTpsoiWwjV8h6Q-NWr4n5aHEjg8RD0QuzHWskHw8RDsE_7qfR68C61Gxt7" width="623"/>
+<img alt="Holly Springs suburban homes" height="715" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjpsRk-LcXGGxCm86s6Iot3YRLHIUwWb1XbobJvnh-6TLFs_JVCO05b3T9jE26i1Q4kyrMn2p7_dLCYwq-jRxVF-tWjRo7mmy41GQb2rOn3-1WWxMDvxw7fpC43gnvCupLUNM9Pvtt0VLFny9-ldUgm4CbBfzc0OQglBg0j5dzngYgU9eTpsoiWwjV8h6Q-NWr4n5aHEjg8RD0QuzHWskHw8RDsE_7qfR68C61Gxt7" width="623">
 <div class="area-card-body">
 <h3 class="area-card-title">Holly Springs, NC</h3>
 <p class="area-card-note">Rapidly growing community with top-rated schools.</p>
@@ -1235,7 +1320,7 @@
 <!-- Agent 1: Nancy Grace -->
 <div class="col-12 reveal-elem is-visible">
 <div class="agent-card">
-<img alt="Nancy Grace Lead Realtor portrait" class="agent-avatar" height="86" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBNzDuud_Uy7QlbxXfm87itWaW86V2mMZDALD4rRLCik8EacxyPib74eMyvSUNpUV_DAbP4VZ_CHIJMsFJa0dRe4qgNcwwhh9cZaduvnh7osFC5kzTlShzQ_M9rkmJYPAAGO2tzbkCQJ9tSu0qMBvpJJtMn7cMmmjDiRz6i9mcKPA59f75d0KGW_PIW_TzRpdBlFgTsL5yXgN9PJRZu1_OokHyyckE5M79IdhI7RjinkGDpRYj99ndow" width="86"/>
+<img alt="Nancy Grace Lead Realtor portrait" class="agent-avatar" height="86" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBNzDuud_Uy7QlbxXfm87itWaW86V2mMZDALD4rRLCik8EacxyPib74eMyvSUNpUV_DAbP4VZ_CHIJMsFJa0dRe4qgNcwwhh9cZaduvnh7osFC5kzTlShzQ_M9rkmJYPAAGO2tzbkCQJ9tSu0qMBvpJJtMn7cMmmjDiRz6i9mcKPA59f75d0KGW_PIW_TzRpdBlFgTsL5yXgN9PJRZu1_OokHyyckE5M79IdhI7RjinkGDpRYj99ndow" width="86">
 <div class="flex-grow-1">
 <h3 class="agent-name">Nancy Grace</h3>
 <div class="agent-role">Principal Realtor®</div>
@@ -1254,7 +1339,7 @@
 <!-- SAMPLE: replace with real data -->
 <div class="col-12 reveal-elem is-visible">
 <div class="agent-card">
-<img alt="Nancy Grace team associate" class="agent-avatar" height="86" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ8vjOOP5hFUDYnIvBzg7z5DeDshOiGAjk_NKDViP-wT1pTZlNNVy7ZvdP2cOVRHw3VCWt8O6BbchPn0z9mX5BnYkKzUqdfiw63B0qZtF6rBN-WCesEBRXvctdB-ZgwhTHhcW9bea4fcNOF5fAuNYASMWwI9PFtqDeJsgibUBNh9E-tvc9ohyiSKXlNf8tQVmmoHwYcdYrIBFHrG4wyCUg0p-4mqdDWjcVsFxOome7hAD8n_hD1vgWyw" width="86"/>
+<img alt="Nancy Grace team associate" class="agent-avatar" height="86" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ8vjOOP5hFUDYnIvBzg7z5DeDshOiGAjk_NKDViP-wT1pTZlNNVy7ZvdP2cOVRHw3VCWt8O6BbchPn0z9mX5BnYkKzUqdfiw63B0qZtF6rBN-WCesEBRXvctdB-ZgwhTHhcW9bea4fcNOF5fAuNYASMWwI9PFtqDeJsgibUBNh9E-tvc9ohyiSKXlNf8tQVmmoHwYcdYrIBFHrG4wyCUg0p-4mqdDWjcVsFxOome7hAD8n_hD1vgWyw" width="86">
 <div class="flex-grow-1">
 <h3 class="agent-name">Marcus Vance</h3>
 <div class="agent-role">Client Coordinator</div>
@@ -1353,14 +1438,14 @@
 <a class="btn-brand-primary w-100" href="tel:+19196164139">Book a viewing</a>
 </div>
 <!-- Minimal Form: Name, Phone/Email, Message -->
-<form class="mb-4" onsubmit="event.preventDefault(); alert('Thank you! Nancy Grace will contact you within 2 business hours.');">
+<form class="mb-4" id="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Nancy Grace will contact you within 2 business hours.');">
 <div class="mb-3">
 <label class="form-label small fw-semibold" for="contact-name">Your Name</label>
-<input class="form-control rounded-pill px-3 py-2 border" id="contact-name" placeholder="Jane Doe" required="" type="text"/>
+<input class="form-control rounded-pill px-3 py-2 border" id="contact-name" placeholder="Jane Doe" required="" type="text">
 </div>
 <div class="mb-3">
 <label class="form-label small fw-semibold" for="contact-info">Phone or Email</label>
-<input class="form-control rounded-pill px-3 py-2 border" id="contact-info" placeholder="jane@example.com" required="" type="text"/>
+<input class="form-control rounded-pill px-3 py-2 border" id="contact-info" placeholder="jane@example.com" required="" type="text">
 </div>
 <div class="mb-3">
 <label class="form-label small fw-semibold" for="contact-msg">Brief Note</label>
@@ -1405,119 +1490,219 @@
       </div>
 </div>
 </footer>
-<!-- COMMUNITY GALLERY LIGHTBOX MODAL DIALOG -->
+<!-- VERSATILE LIGHTBOX MODAL DIALOG (Supports Community & Property Listings) -->
 <div aria-labelledby="lightboxCaption" aria-modal="true" id="galleryLightbox" role="dialog" tabindex="-1">
 <!-- Close Button -->
 <button aria-label="Close Lightbox (Esc)" class="lightbox-close-btn" id="lightboxCloseBtn">
 <i class="bi bi-x-lg"></i>
 </button>
-<!-- Top Info Bar: Title & Counter -->
-<div class="position-absolute top-0 start-50 translate-middle-x mt-4 px-3 py-2 rounded-pill d-flex align-items-center gap-3" style="background: rgba(18, 33, 48, 0.75); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px); z-index: 1075; max-width: 86vw;">
-<span class="text-white text-xs md:text-sm font-semibold truncate" id="lightboxCaption">Community Photo</span>
-<span class="badge rounded-pill text-xs font-mono px-2 py-1" id="lightboxCounter" style="background: rgba(196, 130, 63, 0.85); color: #ffffff;">1 / 4</span>
+<!-- Top Info Bar: Category / Counter -->
+<div class="position-absolute top-0 start-50 translate-middle-x mt-3 px-3 py-1.5 rounded-pill d-flex align-items-center gap-2" style="background: rgba(18, 33, 48, 0.82); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px); z-index: 1075; max-width: 86vw;">
+<span class="text-white-50 text-xs text-uppercase tracking-wider font-semibold" id="lightboxCategory">Photo Preview</span>
+<span class="text-white-50">•</span>
+<span class="badge rounded-pill text-xs font-mono px-2 py-0.5" id="lightboxCounter" style="background: rgba(196, 130, 63, 0.85); color: #ffffff;">1 / 4</span>
 </div>
 <!-- Center Stage Container -->
-<div class="d-flex align-items-center justify-content-center w-100 px-3 px-md-5">
+<div class="d-flex align-items-center justify-content-center w-100 px-2 px-md-4 mt-4">
 <!-- Prev Button -->
-<button aria-label="Previous photo (Arrow Left)" class="lightbox-nav-btn me-2 me-md-4" id="lightboxPrevBtn">
+<button aria-label="Previous photo (Arrow Left)" class="lightbox-nav-btn me-2 me-md-3" id="lightboxPrevBtn">
 <i class="bi bi-chevron-left"></i>
 </button>
-<!-- Active Display Image -->
+<!-- Active Display Image Stage -->
 <div class="lightbox-stage" id="lightboxStage">
-<img alt="Community Showcase" class="lightbox-img-element" id="lightboxImg" src=""/>
+<img alt="Preview photo" class="lightbox-img-element" id="lightboxImg" src="">
 </div>
 <!-- Next Button -->
-<button aria-label="Next photo (Arrow Right)" class="lightbox-nav-btn ms-2 ms-md-4" id="lightboxNextBtn">
+<button aria-label="Next photo (Arrow Right)" class="lightbox-nav-btn ms-2 ms-md-3" id="lightboxNextBtn">
 <i class="bi bi-chevron-right"></i>
 </button>
 </div>
+<!-- Bottom Details & Quick Inquire CTA Bar -->
+<div class="lightbox-details-bar" id="lightboxDetailsBar">
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+<div>
+<div class="d-flex align-items-center gap-2">
+<h4 class="font-heading fs-6 fw-bold text-white mb-0" id="lightboxCaption">Property Name</h4>
+<span class="badge rounded-pill text-xs px-2 py-0.5" id="lightboxStatusBadge" style="display: none;"></span>
+</div>
+<div class="text-xs text-white-50 mt-0.5" id="lightboxSubtext">Apex, NC • $789,000</div>
+</div>
+<!-- Inquire CTA -->
+<a class="btn btn-sm btn-brand-primary rounded-pill px-3 py-1.5 text-xs fw-semibold text-white text-decoration-none shadow-sm" href="#contact" id="lightboxInquireBtn" onclick="inquireFromLightbox()">
+<i class="bi bi-calendar-event me-1"></i> Inquire About This Home
+      </a>
+</div>
+<!-- Property Specs Row -->
+<div class="d-flex align-items-center gap-3 text-xs text-white-50 border-top pt-2 border-white/10" id="lightboxSpecsRow" style="display: none;">
+<span id="lightboxBeds"><i class="bi bi-door-closed me-1 text-warning"></i>4 Beds</span>
+<span id="lightboxBaths"><i class="bi bi-droplet me-1 text-warning"></i>3.5 Baths</span>
+<span id="lightboxSqft"><i class="bi bi-aspect-ratio me-1 text-warning"></i>3,210 sq ft</span>
+</div>
+</div>
 <!-- Bottom Keyboard hint for desktop -->
-<div class="position-absolute bottom-0 start-50 translate-middle-x mb-3 text-white-50 text-xs tracking-wider d-none d-md-flex align-items-center gap-3">
+<div class="mt-2 text-white-50 text-xs tracking-wider d-none d-md-flex align-items-center gap-3">
 <span><kbd class="bg-white/10 px-1.5 py-0.5 rounded text-white text-xs">←</kbd> <kbd class="bg-white/10 px-1.5 py-0.5 rounded text-white text-xs">→</kbd> Navigate</span>
 <span>•</span>
 <span><kbd class="bg-white/10 px-1.5 py-0.5 rounded text-white text-xs">ESC</kbd> Close</span>
-</div>
-</div>
-<!-- LISTING DETAIL MODAL -->
-<div aria-hidden="true" aria-labelledby="modalListingTitle" class="modal fade" id="listingModal" tabindex="-1">
-<div class="modal-dialog modal-dialog-centered">
-<div class="modal-content">
-<div class="modal-header">
-<h4 class="modal-title font-heading fs-6 fw-bold" id="modalListingTitle">Property Details</h4>
-<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
-</div>
-<div class="modal-body p-0">
-<div style="height: 220px; overflow: hidden;">
-<img alt="Property" class="w-100 h-100 object-fit-cover" id="modalListingImg" src=""/>
-</div>
-<div class="p-3">
-<div class="d-flex justify-content-between align-items-center mb-1">
-<span class="fs-4 fw-bold text-dark font-heading" id="modalListingPrice"></span>
-<span class="badge bg-secondary-subtle text-dark" id="modalListingLoc"></span>
-</div>
-<div class="d-flex gap-3 text-muted small mb-3" id="modalListingFeatures"></div>
-<p class="small text-muted mb-3" id="modalListingDesc"></p>
-<a class="btn-brand-primary w-100 text-center" href="tel:+19196164139">
-              Book a viewing
-            </a>
-</div>
-</div>
-</div>
 </div>
 </div>
 <!-- Bootstrap 5 Bundle JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- INTERACTIVITY & SCROLL SCRIPTS -->
 <script>
-    // Gallery Data for Community Showcase Lightbox
-    const communityGalleryData = [
-      {
-        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBWTgpFY7VCQas5Gg2XwTa76nwfX2FjMZTE4B5TP0B8DMK551DbA_ReiTtAcqthx6vBSX8LdKN-S1S_Suo5exJpW7_euxHBwSUh3lfTiOzVH2EGEGyEE3PpNUEirFEWrFLtFEyZ6h6gAOOFPd0snQBJct2ZmAKcHpUnvekXDw3bnLk8QXgz3GhqJB_ICRnZnWSTh__wYPb35vAlgCAh_XACQR84mnzROcN5qTPFxurB6njy7D3IB2knLg",
-        title: "Under contract home in Apex"
-      },
-      {
-        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuA66w1Taf2mool4be4NKXlviDnjX_kdrMFSwnQlpymaJfyJ8dXRhqWCmyJQql7BMwz3epASknxg5s_SJU40icjLVAg0H6-sQ79baJRsAeBBZdtSNtkrSFq4EciBv8PIHky0asvDcGQXY4sAm1Aps1YIlBdOqR29Uq-wayqwubhFo4e_VMONo9RV822dVGI6mgYdAz2kWdgwvvMu8De_vpQD4QkL6I66AL1VOjQttMWFpw9uSlX-ZDsEdg",
-        title: "Nancy Grace team mascot at listing"
-      },
-      {
-        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAj2O1MpSlqD853dsTpfD87_OYeYBTPcjpYRKGPwP-k1zn2kkHVXdcuZL-fRXMrXBTvJnrhlMEqvpspjUXAT2a6jWdB2yIL8UKmlmtVXG52ifqeGJKfgq0EQe06F7X-zdJu9sO66H3zgTJU1SNqk6nMe15NyWPdBfpRS-mjbko9vGamedHQRhv6EQpfhxrBq26yro6Sf8V0s_UNx6BfyHJ0ZLpwR8IQfHGkn1QTyQATIAWFTp63jp4pSg",
-        title: "Downtown Apex holiday atmosphere"
-      },
-      {
-        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9LNaCn6Y4ChZqopKxexxyFuOnmT4EraawrW9Kb8DmUJIMkyJWSpc_DY2wnaSfwNqUJToZI0Xviof2rGFH2QyS2ocE--NUwxirxQiNo1pLFJtKVWL7NvmjivUydJVnBfwTXsBrvrAnYDkME32nLf3jTkwDWiBqhR73SdkMXW6kl0n03Uk_qH8uPQtMOJq9zQnB0UJK4TLNlRYHERVGoYkCjkO-2BXD2oJd1V9FfusTsgKVXFNFOr2kEg",
-        title: "Community celebration"
-      }
-    ];
+    // Unified Datasets for Lightbox: Community & Property Listings
+    const galleryDatasets = {
+      community: [
+        {
+          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBWTgpFY7VCQas5Gg2XwTa76nwfX2FjMZTE4B5TP0B8DMK551DbA_ReiTtAcqthx6vBSX8LdKN-S1S_Suo5exJpW7_euxHBwSUh3lfTiOzVH2EGEGyEE3PpNUEirFEWrFLtFEyZ6h6gAOOFPd0snQBJct2ZmAKcHpUnvekXDw3bnLk8QXgz3GhqJB_ICRnZnWSTh__wYPb35vAlgCAh_XACQR84mnzROcN5qTPFxurB6njy7D3IB2knLg",
+          title: "Under contract home in Apex",
+          subtext: "Apex, NC • Proven Marketing Result",
+          isListing: false
+        },
+        {
+          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuA66w1Taf2mool4be4NKXlviDnjX_kdrMFSwnQlpymaJfyJ8dXRhqWCmyJQql7BMwz3epASknxg5s_SJU40icjLVAg0H6-sQ79baJRsAeBBZdtSNtkrSFq4EciBv8PIHky0asvDcGQXY4sAm1Aps1YIlBdOqR29Uq-wayqwubhFo4e_VMONo9RV822dVGI6mgYdAz2kWdgwvvMu8De_vpQD4QkL6I66AL1VOjQttMWFpw9uSlX-ZDsEdg",
+          title: "Nancy Grace Team Mascot at Listing",
+          subtext: "Triangle Neighborhoods • Client First Service",
+          isListing: false
+        },
+        {
+          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAj2O1MpSlqD853dsTpfD87_OYeYBTPcjpYRKGPwP-k1zn2kkHVXdcuZL-fRXMrXBTvJnrhlMEqvpspjUXAT2a6jWdB2yIL8UKmlmtVXG52ifqeGJKfgq0EQe06F7X-zdJu9sO66H3zgTJU1SNqk6nMe15NyWPdBfpRS-mjbko9vGamedHQRhv6EQpfhxrBq26yro6Sf8V0s_UNx6BfyHJ0ZLpwR8IQfHGkn1QTyQATIAWFTp63jp4pSg",
+          title: "Downtown Apex Holiday Atmosphere",
+          subtext: "Salem Street • Heart of the Community",
+          isListing: false
+        },
+        {
+          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9LNaCn6Y4ChZqopKxexxyFuOnmT4EraawrW9Kb8DmUJIMkyJWSpc_DY2wnaSfwNqUJToZI0Xviof2rGFH2QyS2ocE--NUwxirxQiNo1pLFJtKVWL7NvmjivUydJVnBfwTXsBrvrAnYDkME32nLf3jTkwDWiBqhR73SdkMXW6kl0n03Uk_qH8uPQtMOJq9zQnB0UJK4TLNlRYHERVGoYkCjkO-2BXD2oJd1V9FfusTsgKVXFNFOr2kEg",
+          title: "Community Celebration",
+          subtext: "Apex & Cary NC • Local Events & Traditions",
+          isListing: false
+        }
+      ],
+      listing: [
+        {
+          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCjpsRk-LcXGGxCm86s6Iot3YRLHIUwWb1XbobJvnh-6TLFs_JVCO05b3T9jE26i1Q4kyrMn2p7_dLCYwq-jRxVF-tWjRo7mmy41GQb2rOn3-1WWxMDvxw7fpC43gnvCupLUNM9Pvtt0VLFny9-ldUgm4CbBfzc0OQglBg0j5dzngYgU9eTpsoiWwjV8h6Q-NWr4n5aHEjg8RD0QuzHWskHw8RDsE_7qfR68C61Gxt7",
+          title: "Bella Casa Craftsman",
+          price: "$789,000",
+          location: "Apex, NC",
+          status: "Under contract",
+          statusClass: "contract",
+          beds: "4 Beds",
+          baths: "3.5 Baths",
+          sqft: "3,210 sq ft",
+          subtext: "Apex, NC • $789,000",
+          isListing: true
+        },
+        {
+          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBx_P0TePXpWvq5NqFjDixTZaWxS0vPLuzyq3CJfDlBz2HYZKaez2TR6Bw8dYb1pPaU5KjC8qLspp4sWnBq2Km_ob7oXrv2IX5kExXLk3LZRIDGo3LE4zNADVhW0PlNMgGA9IKDdvKy9M34gAE0sG2yjiHseWrHD5u0mbHmZF036T6zyxlAEPtuYSmBa_HhDHqhtv_OgfWVH2rYYGALY56yVKu4KE4jbbQt9ZlNZtTH",
+          title: "Historic District Colonial",
+          price: "$845,000",
+          location: "Downtown Apex",
+          status: "Just listed",
+          statusClass: "primary",
+          beds: "3 Beds",
+          baths: "3 Baths",
+          sqft: "2,640 sq ft",
+          subtext: "Downtown Apex • $845,000",
+          isListing: true
+        },
+        {
+          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuB6QQwK0GI70jJNFOzOSld_tekQc1ED9N4aJxzfEAACpmt5LuxlKtOSkoR-GFXWYgO2c6vXlq1MHMirfC54z3h0E3WTQMX-lt1dj5X0p7BxO9EGe9UR-LFCHynpAIEgxJr0Fbtdh7iZX_G6Z1hjdbgNG-jRj3Xzn4JG41deL44cag2cA5MaGi1xgfxl96foXlmVlVd4x_8TrM1e90mN1C6zF4P5a_q7qNwMTep-fNRw",
+          title: "Weatherstone Modern Traditional",
+          price: "$625,000",
+          location: "Cary, NC",
+          status: "New price",
+          statusClass: "primary",
+          beds: "3 Beds",
+          baths: "2.5 Baths",
+          sqft: "2,180 sq ft",
+          subtext: "Cary, NC • $625,000",
+          isListing: true
+        },
+        {
+          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuD762UR5oiISEhmQcQL218nISbGjE8qUvoAvnpgElprq56XHbczSA3g_3H7ecUy2Dle9U9uif42FPx4sCIDpyZZdXXvLvXictlPQvjhsmY6aM_mulXdAs-eaoezr9TEl5IhithKi44HvOnboWRjQAhIQOQozUwP9a0c0ZiI4pKSd61375vO3hiZ6JCTNifZo-g-ThGHFs6x6ak9qQUmrhPSXLKUp68xkKeOR-fNqX6O",
+          title: "Preston Golf Estate",
+          price: "$1,120,000",
+          location: "Preston, Cary",
+          status: "Featured",
+          statusClass: "primary",
+          beds: "5 Beds",
+          baths: "4.5 Baths",
+          sqft: "4,350 sq ft",
+          subtext: "Preston, Cary • $1,120,000",
+          isListing: true
+        }
+      ]
+    };
 
+    let activeGalleryType = 'community';
     let currentGalleryIndex = 0;
+
     const lightboxModal = document.getElementById('galleryLightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxSubtext = document.getElementById('lightboxSubtext');
+    const lightboxCategory = document.getElementById('lightboxCategory');
     const lightboxCounter = document.getElementById('lightboxCounter');
+    const lightboxStatusBadge = document.getElementById('lightboxStatusBadge');
+    const lightboxSpecsRow = document.getElementById('lightboxSpecsRow');
+    const lightboxBeds = document.getElementById('lightboxBeds');
+    const lightboxBaths = document.getElementById('lightboxBaths');
+    const lightboxSqft = document.getElementById('lightboxSqft');
+    const lightboxInquireBtn = document.getElementById('lightboxInquireBtn');
     const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
     const lightboxPrevBtn = document.getElementById('lightboxPrevBtn');
     const lightboxNextBtn = document.getElementById('lightboxNextBtn');
 
     function updateLightboxDisplay(index) {
-      if (index < 0) index = communityGalleryData.length - 1;
-      if (index >= communityGalleryData.length) index = 0;
+      const dataList = galleryDatasets[activeGalleryType] || galleryDatasets.community;
+      if (index < 0) index = dataList.length - 1;
+      if (index >= dataList.length) index = 0;
       currentGalleryIndex = index;
 
-      const item = communityGalleryData[currentGalleryIndex];
-      lightboxImg.style.opacity = '0.4';
+      const item = dataList[currentGalleryIndex];
+      lightboxImg.style.opacity = '0.35';
       lightboxImg.style.transform = 'scale(0.97)';
       
       setTimeout(() => {
         lightboxImg.src = item.src;
         lightboxImg.alt = item.title;
         lightboxCaption.innerText = item.title;
-        lightboxCounter.innerText = `${currentGalleryIndex + 1} / ${communityGalleryData.length}`;
+        lightboxSubtext.innerText = item.subtext || '';
+        lightboxCategory.innerText = activeGalleryType === 'listing' ? 'Property Preview' : 'Community Photo';
+        lightboxCounter.innerText = `${currentGalleryIndex + 1} / ${dataList.length}`;
+
+        // Configure Property-specific controls vs Community photo controls
+        if (item.isListing) {
+          lightboxStatusBadge.style.display = 'inline-block';
+          lightboxStatusBadge.innerText = item.status;
+          if (item.statusClass === 'contract') {
+            lightboxStatusBadge.style.backgroundColor = 'rgba(196, 130, 63, 0.95)';
+            lightboxStatusBadge.style.color = '#ffffff';
+          } else {
+            lightboxStatusBadge.style.backgroundColor = 'rgba(255, 255, 255, 0.18)';
+            lightboxStatusBadge.style.color = '#ffffff';
+          }
+
+          lightboxSpecsRow.style.display = 'flex';
+          lightboxBeds.innerHTML = `<i class="bi bi-door-closed me-1 text-warning"></i>${item.beds}`;
+          lightboxBaths.innerHTML = `<i class="bi bi-droplet me-1 text-warning"></i>${item.baths}`;
+          lightboxSqft.innerHTML = `<i class="bi bi-aspect-ratio me-1 text-warning"></i>${item.sqft}`;
+          
+          lightboxInquireBtn.style.display = 'inline-flex';
+          lightboxInquireBtn.setAttribute('data-property-title', item.title);
+        } else {
+          lightboxStatusBadge.style.display = 'none';
+          lightboxSpecsRow.style.display = 'none';
+          lightboxInquireBtn.style.display = 'none';
+        }
+
         lightboxImg.style.opacity = '1';
         lightboxImg.style.transform = 'scale(1)';
-      }, 120);
+      }, 100);
     }
 
-    function openGalleryLightbox(index) {
+    function openGalleryLightbox(index, type = 'community') {
+      activeGalleryType = type;
       updateLightboxDisplay(index);
       lightboxModal.classList.add('open');
       document.body.style.overflow = 'hidden';
@@ -1535,6 +1720,17 @@
 
     function prevGalleryImage() {
       updateLightboxDisplay(currentGalleryIndex - 1);
+    }
+
+    function inquireFromLightbox() {
+      const activeListing = galleryDatasets.listing[currentGalleryIndex];
+      closeGalleryLightbox();
+      if (activeListing) {
+        const msgField = document.getElementById('contact-msg');
+        if (msgField) {
+          msgField.value = `Interested in scheduling a viewing for ${activeListing.title} (${activeListing.price}).`;
+        }
+      }
     }
 
     if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeGalleryLightbox);
@@ -1683,23 +1879,6 @@
         });
       }, { passive: true });
     });
-
-    // 5. Modal for Listing Details
-    function openListingModal(title, price, loc, beds, baths, sqft, img, desc) {
-      document.getElementById('modalListingTitle').innerText = title;
-      document.getElementById('modalListingPrice').innerText = price;
-      document.getElementById('modalListingLoc').innerText = loc;
-      document.getElementById('modalListingFeatures').innerHTML = `
-        <span><i class="bi bi-door-closed me-1"></i>${beds}</span>
-        <span><i class="bi bi-droplet me-1"></i>${baths}</span>
-        <span><i class="bi bi-aspect-ratio me-1"></i>${sqft}</span>
-      `;
-      document.getElementById('modalListingDesc').innerText = desc;
-      document.getElementById('modalListingImg').src = img;
-      
-      const modal = new bootstrap.Modal(document.getElementById('listingModal'));
-      modal.show();
-    }
   </script>
 <!--
   ========================================================================
@@ -1728,10 +1907,13 @@
   [x] Consistent CTA "Book a viewing" in Hero, Nav, Listings, and Contact
   [x] RealEstateAgent schema & FAQPage JSON-LD integrated
   [x] Sample data commented with <!-- SAMPLE: replace with real data -->
-  [x] Community photo gallery lightbox with arrow keys &amp; backdrop dismiss
+  [x] Versatile photo gallery lightbox supporting both community photos &amp; high-resolution property listing previews
+  [x] Inquire / Schedule tour CTA integration inside listing lightbox
   [x] Vanilla JS scroll observer, progress indicator, and modal interactions
   ========================================================================
   --&gt;
+
+
 
 
 
