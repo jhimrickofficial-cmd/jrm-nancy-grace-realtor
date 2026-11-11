@@ -515,46 +515,54 @@
       gap: 4px;
     }
 
-    /* Area Card */
-    .area-card {
+    /* Area Card Enhanced */
+    .area-card-grid {
       position: relative;
-      border-radius: var(--radius-md);
+      border-radius: 1rem;
       overflow: hidden;
-      height: 190px;
+      height: 250px;
       box-shadow: var(--shadow-subtle);
-      margin-bottom: 12px;
       cursor: pointer;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
-    .area-card img {
+    .area-card-grid:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-float);
+    }
+    .area-card-grid img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.78);
-      transition: transform 0.6s ease;
+      filter: brightness(0.72);
+      transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .area-card:hover img {
-      transform: scale(1.05);
+    .area-card-grid:hover img {
+      transform: scale(1.06);
     }
-    .area-card-body {
+    .area-card-grid-body {
       position: absolute;
       inset: 0;
-      padding: 16px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      background: linear-gradient(180deg, transparent 40%, rgba(18, 33, 48, 0.88) 100%);
+      background: linear-gradient(180deg, rgba(18, 33, 48, 0.1) 0%, rgba(18, 33, 48, 0.5) 45%, rgba(18, 33, 48, 0.92) 100%);
       color: #ffffff;
     }
-    .area-card-title {
-      font-size: 1.15rem;
+    .area-card-grid-title {
+      font-size: 1.35rem;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .area-card-note {
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.85);
+    .area-card-grid-note {
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.9);
       margin: 0;
+      line-height: 1.45;
     }
 
     /* Service Tile */
@@ -857,7 +865,7 @@
           "latitude": "35.7327",
           "longitude": "-78.8503"
         },
-        "areaServed": ["Apex, NC", "Cary, NC", "Raleigh, NC", "Triangle Area"],
+        "areaServed": ["Apex, NC", "Cary, NC", "Raleigh, NC", "Triangle Area", "Chapel Hill, NC", "Wake Forest, NC"],
         "priceRange": "$$$$",
         "openingHours": "Mo-Sa 09:00-18:00"
       },
@@ -903,6 +911,26 @@
               "price": "1120000",
               "priceCurrency": "USD",
               "address": "Preston, Cary"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "RealEstateListing",
+              "name": "The Oaks Custom Manor",
+              "price": "985000",
+              "priceCurrency": "USD",
+              "address": "Chapel Hill, NC"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "RealEstateListing",
+              "name": "Heritage Modern Farmhouse",
+              "price": "740000",
+              "priceCurrency": "USD",
+              "address": "Wake Forest, NC"
             }
           }
         ]
@@ -1116,7 +1144,7 @@
 <div class="reveal-elem is-visible">
 <article aria-label="Preview Bella Casa Craftsman in high resolution" class="listing-card h-full flex flex-col" onclick="openGalleryLightbox(0, 'listing')" role="button" tabindex="0">
 <div class="listing-img-wrap" style="height: 220px;">
-<img alt="Bella Casa Craftsman home exterior" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjpsRk-LcXGGxCm86s6Iot3YRLHIUwWb1XbobJvnh-6TLFs_JVCO05b3T9jE26i1Q4kyrMn2p7_dLCYwq-jRxVF-tWjRo7mmy41GQb2rOn3-1WWxMDvxw7fpC43gnvCupLUNM9Pvtt0VLFny9-ldUgm4CbBfzc0OQglBg0j5dzngYgU9eTpsoiWwjV8h6Q-NWr4n5aHEjg8RD0QuzHWskHw8RDsE_7qfR68C61Gxt7">
+<img alt="Bella Casa Craftsman home exterior" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida/ALJJyrDq_mS-Ci9YWRc39fiIwC5EJ_QPpeYntsPLSGC4uAQ8GjGCVk6yHjBQZwSZOuWtat3RdCremmo1x7p401kudoz7ulMhXLw2IFeoCk80B2mMGeszUdRT76iMiufx7UbhZ3KX0lmFDMvgYk4pH8OxQN5qTCDDY1PiG2vK83fMXzM_DjAfpBuH8J2BF7NcmZvHR5znZKKChWzTXh1E5dtDnM0c_B6EGRJ474A76Nmh8FKK">
 <span class="status-badge contract">Under contract</span>
 <div class="listing-preview-cue">
 <span class="listing-preview-icon"><i class="bi bi-arrows-fullscreen"></i></span>
@@ -1141,7 +1169,7 @@
 <div class="reveal-elem is-visible">
 <article aria-label="Preview Historic District Colonial in high resolution" class="listing-card h-full flex flex-col" onclick="openGalleryLightbox(1, 'listing')" role="button" tabindex="0">
 <div class="listing-img-wrap" style="height: 220px;">
-<img alt="Historic District Colonial home exterior" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx_P0TePXpWvq5NqFjDixTZaWxS0vPLuzyq3CJfDlBz2HYZKaez2TR6Bw8dYb1pPaU5KjC8qLspp4sWnBq2Km_ob7oXrv2IX5kExXLk3LZRIDGo3LE4zNADVhW0PlNMgGA9IKDdvKy9M34gAE0sG2yjiHseWrHD5u0mbHmZF036T6zyxlAEPtuYSmBa_HhDHqhtv_OgfWVH2rYYGALY56yVKu4KE4jbbQt9ZlNZtTH">
+<img alt="Historic District Colonial home exterior" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida/ALJJyrAs5h1ha2p1Z9zVwWkbYqXRMKCqzrbzMPLDZfgip4IfjaEgH1W8aWRMgKiCGyE2f72JLNIEQiUIOH70M3n473I_mP9Nt8iCNkDvWfYuNTowSPr-UL_d8zffcCZLRKCKz5uRJ3O8SOuB-A4gzsNvI3j4Ew_wwOD8ik8RU6R7UlPtVMPk7aOGMiPSi2SrfYjiwUxDu6S8uxp7xAye6-5XGGpuRb_IlB4oIb--1i-Imzvr">
 <span class="status-badge">Just listed</span>
 <div class="listing-preview-cue">
 <span class="listing-preview-icon"><i class="bi bi-arrows-fullscreen"></i></span>
@@ -1166,7 +1194,7 @@
 <div class="reveal-elem is-visible">
 <article aria-label="Preview Weatherstone Modern Traditional in high resolution" class="listing-card h-full flex flex-col" onclick="openGalleryLightbox(2, 'listing')" role="button" tabindex="0">
 <div class="listing-img-wrap" style="height: 220px;">
-<img alt="Weatherstone Modern Traditional home exterior" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6QQwK0GI70jJNFOzOSld_tekQc1ED9N4aJxzfEAACpmt5LuxlKtOSkoR-GFXWYgO2c6vXlq1MHMirfC54z3h0E3WTQMX-lt1dj5X0p7BxO9EGe9UR-LFCHynpAIEgxJr0Fbtdh7iZX_G6Z1hjdbgNG-jRj3Xzn4JG41deL44cag2cA5MaGi1xgfxl96foXlmVlVd4x_8TrM1e90mN1C6zF4P5a_q7qNwMTep-fNRw">
+<img alt="Weatherstone Modern Traditional home exterior" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida/ALJJyrAgtBlSrfZnAwUC6oGG5wILRD_40HenYSqek03hY2j5C3l5vJsMTJixZUc1likAYzMZ_BITjzF3GePiDo29-rzvX7Ap7aRHcYT36d9uVYzMGAjqLPIGNWBtoskj1erZpHY4S6Z4pNoJcHoUKmK5CjLe3R0TmKyrIk-Swh0YeNX1Ki1WPOp9P7B7B5PuUkaxcrUeowLMDZ7sjira0Gj7B0YCLm76ax7BdcPBxavCa7GItw">
 <span class="status-badge">New price</span>
 <div class="listing-preview-cue">
 <span class="listing-preview-icon"><i class="bi bi-arrows-fullscreen"></i></span>
@@ -1191,7 +1219,7 @@
 <div class="reveal-elem is-visible">
 <article aria-label="Preview Preston Golf Estate in high resolution" class="listing-card h-full flex flex-col" onclick="openGalleryLightbox(3, 'listing')" role="button" tabindex="0">
 <div class="listing-img-wrap" style="height: 220px;">
-<img alt="Preston Golf Estate luxury home exterior" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD762UR5oiISEhmQcQL218nISbGjE8qUvoAvnpgElprq56XHbczSA3g_3H7ecUy2Dle9U9uif42FPx4sCIDpyZZdXXvLvXictlPQvjhsmY6aM_mulXdAs-eaoezr9TEl5IhithKi44HvOnboWRjQAhIQOQozUwP9a0c0ZiI4pKSd61375vO3hiZ6JCTNifZo-g-ThGHFs6x6ak9qQUmrhPSXLKUp68xkKeOR-fNqX6O">
+<img alt="Preston Golf Estate luxury home exterior" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida/ALJJyrAdo2at2q0-aoYC9LX0BxUeuKh4Eb84kFwFig-GgoEusJ0L1Py3lTm7R4wbl3bSlIQxRBmSPZEb2yyzWD3X-6df5grf9Pt88-iID6K9yFXRHtDoRepeATTyyiTL1UeQSyi6vZHeCP0dPIs2yrT2uxR6KXZoV20RytR2NsskInLwOwDgzQTl29qnjHX7nKqxLiU9XSogRRYs1hK5gwrzeaYEs4rJONxLao9lhpd8Q99t9g">
 <span class="status-badge">Featured</span>
 <div class="listing-preview-cue">
 <span class="listing-preview-icon"><i class="bi bi-arrows-fullscreen"></i></span>
@@ -1208,6 +1236,56 @@
 <span><i class="bi bi-door-closed"></i> 5 Beds</span>
 <span><i class="bi bi-droplet"></i> 4.5 Baths</span>
 <span><i class="bi bi-aspect-ratio"></i> 4,350 sq ft</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Listing Card 5 (NEW) -->
+<div class="reveal-elem is-visible">
+<article aria-label="Preview The Oaks Custom Manor in high resolution" class="listing-card h-full flex flex-col" onclick="openGalleryLightbox(4, 'listing')" role="button" tabindex="0">
+<div class="listing-img-wrap" style="height: 220px;">
+<img alt="The Oaks Custom Manor luxury brick home exterior in Chapel Hill NC" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfWlAjfOqj1bPyx_b6qLDX-Jz_tHJ7sfbAFwls7jmx-QEGXUNPxhLKm0BtoSTyUXwvJNc0h8HZKJLJ9Tb3GX-mLZeXYUpHTs6oH-Sv0geofqMxi1zHvMC15LRVPD03_x4qETfCRbHj78rxQxIXhK7_NSgDmEcQxrcVmhNg2k_bUZ01gF9fisHKwRfTjDXX5Cx4gtSoQwLQtAOSuGilbvfkwpHba7eNvFeAOae_1e-t">
+<span class="status-badge">Just listed</span>
+<div class="listing-preview-cue">
+<span class="listing-preview-icon"><i class="bi bi-arrows-fullscreen"></i></span>
+<span>Preview Photos &amp; Details</span>
+</div>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<div class="d-flex justify-content-between align-items-baseline mb-1">
+<span class="listing-price">$985,000</span>
+<span class="text-muted small">Chapel Hill, NC</span>
+</div>
+<h3 class="h6 fw-bold mb-2">The Oaks Custom Manor</h3>
+<div class="listing-meta-row mt-auto pt-2">
+<span><i class="bi bi-door-closed"></i> 5 Beds</span>
+<span><i class="bi bi-droplet"></i> 4.5 Baths</span>
+<span><i class="bi bi-aspect-ratio"></i> 3,820 sq ft</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Listing Card 6 (NEW) -->
+<div class="reveal-elem is-visible">
+<article aria-label="Preview Heritage Modern Farmhouse in high resolution" class="listing-card h-full flex flex-col" onclick="openGalleryLightbox(5, 'listing')" role="button" tabindex="0">
+<div class="listing-img-wrap" style="height: 220px;">
+<img alt="Heritage Modern Farmhouse exterior in Wake Forest NC" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7SSwuOFzGfq4jjwgJh9mb0xYlJ0HWFLiq0dp4T22UgD0j1VrUnbu6b0Ug0qN-Zc3YNy3dfIqkxLDerMkhddMgUeqlStlB3qnrs409WS4FaFNpA6JavPYy83iHlDAk9b-tRi8yzkrJWdKrBReaH3EuSAbpOV03UNEfTyxX1-0iURxYBXtCzWv7vFf2so82T2dIfi8qgcYKjFLdxUb0BCVhGBLyW-l0EZksfLX-Vs5_">
+<span class="status-badge">New listing</span>
+<div class="listing-preview-cue">
+<span class="listing-preview-icon"><i class="bi bi-arrows-fullscreen"></i></span>
+<span>Preview Photos &amp; Details</span>
+</div>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<div class="d-flex justify-content-between align-items-baseline mb-1">
+<span class="listing-price">$740,000</span>
+<span class="text-muted small">Wake Forest, NC</span>
+</div>
+<h3 class="h6 fw-bold mb-2">Heritage Modern Farmhouse</h3>
+<div class="listing-meta-row mt-auto pt-2">
+<span><i class="bi bi-door-closed"></i> 4 Beds</span>
+<span><i class="bi bi-droplet"></i> 3 Baths</span>
+<span><i class="bi bi-aspect-ratio"></i> 2,950 sq ft</span>
 </div>
 </div>
 </article>
@@ -1229,32 +1307,44 @@
 <p class="section-note">
           Discover towns celebrated for premier schools and vibrant community living.
         </p>
-<div class="row g-2">
-<!-- SAMPLE: replace with real data -->
-<div class="col-12 reveal-elem is-visible">
-<div class="area-card" onclick="location.href='#contact'">
-<img alt="Downtown Apex community street" height="708" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj2O1MpSlqD853dsTpfD87_OYeYBTPcjpYRKGPwP-k1zn2kkHVXdcuZL-fRXMrXBTvJnrhlMEqvpspjUXAT2a6jWdB2yIL8UKmlmtVXG52ifqeGJKfgq0EQe06F7X-zdJu9sO66H3zgTJU1SNqk6nMe15NyWPdBfpRS-mjbko9vGamedHQRhv6EQpfhxrBq26yro6Sf8V0s_UNx6BfyHJ0ZLpwR8IQfHGkn1QTyQATIAWFTp63jp4pSg" width="627">
-<div class="area-card-body">
-<h3 class="area-card-title">Apex, NC</h3>
-<p class="area-card-note">Ranked #1 Best Place to Live in America.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Community 1: Apex, NC -->
+<div class="reveal-elem is-visible">
+<div class="area-card-grid rounded-2xl overflow-hidden" onclick="location.href='#contact'">
+<img alt="Downtown Apex historic town center" height="708" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj2O1MpSlqD853dsTpfD87_OYeYBTPcjpYRKGPwP-k1zn2kkHVXdcuZL-fRXMrXBTvJnrhlMEqvpspjUXAT2a6jWdB2yIL8UKmlmtVXG52ifqeGJKfgq0EQe06F7X-zdJu9sO66H3zgTJU1SNqk6nMe15NyWPdBfpRS-mjbko9vGamedHQRhv6EQpfhxrBq26yro6Sf8V0s_UNx6BfyHJ0ZLpwR8IQfHGkn1QTyQATIAWFTp63jp4pSg" width="627">
+<div class="area-card-grid-body">
+<h3 class="area-card-grid-title">Apex, NC <i class="bi bi-arrow-up-right-circle text-warning fs-5"></i></h3>
+<p class="area-card-grid-note">Ranked #1 Best Place to Live in America.</p>
 </div>
 </div>
 </div>
-<div class="col-12 reveal-elem is-visible">
-<div class="area-card" onclick="location.href='#contact'">
+<!-- Community 2: Cary, NC -->
+<div class="reveal-elem is-visible">
+<div class="area-card-grid rounded-2xl overflow-hidden" onclick="location.href='#contact'">
 <img alt="Cary greenway and executive residences" height="703" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6QQwK0GI70jJNFOzOSld_tekQc1ED9N4aJxzfEAACpmt5LuxlKtOSkoR-GFXWYgO2c6vXlq1MHMirfC54z3h0E3WTQMX-lt1dj5X0p7BxO9EGe9UR-LFCHynpAIEgxJr0Fbtdh7iZX_G6Z1hjdbgNG-jRj3Xzn4JG41deL44cag2cA5MaGi1xgfxl96foXlmVlVd4x_8TrM1e90mN1C6zF4P5a_q7qNwMTep-fNRw" width="589">
-<div class="area-card-body">
-<h3 class="area-card-title">Cary, NC</h3>
-<p class="area-card-note">Premier parks, dining, and executive neighborhoods.</p>
+<div class="area-card-grid-body">
+<h3 class="area-card-grid-title">Cary, NC <i class="bi bi-arrow-up-right-circle text-warning fs-5"></i></h3>
+<p class="area-card-grid-note">Premier parks, dining, and executive neighborhoods.</p>
 </div>
 </div>
 </div>
-<div class="col-12 reveal-elem is-visible">
-<div class="area-card" onclick="location.href='#contact'">
+<!-- Community 3: Holly Springs, NC -->
+<div class="reveal-elem is-visible">
+<div class="area-card-grid rounded-2xl overflow-hidden" onclick="location.href='#contact'">
 <img alt="Holly Springs suburban homes" height="715" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjpsRk-LcXGGxCm86s6Iot3YRLHIUwWb1XbobJvnh-6TLFs_JVCO05b3T9jE26i1Q4kyrMn2p7_dLCYwq-jRxVF-tWjRo7mmy41GQb2rOn3-1WWxMDvxw7fpC43gnvCupLUNM9Pvtt0VLFny9-ldUgm4CbBfzc0OQglBg0j5dzngYgU9eTpsoiWwjV8h6Q-NWr4n5aHEjg8RD0QuzHWskHw8RDsE_7qfR68C61Gxt7" width="623">
-<div class="area-card-body">
-<h3 class="area-card-title">Holly Springs, NC</h3>
-<p class="area-card-note">Rapidly growing community with top-rated schools.</p>
+<div class="area-card-grid-body">
+<h3 class="area-card-grid-title">Holly Springs, NC <i class="bi bi-arrow-up-right-circle text-warning fs-5"></i></h3>
+<p class="area-card-grid-note">Rapidly growing community with top-rated schools.</p>
+</div>
+</div>
+</div>
+<!-- Community 4: Chapel Hill / Durham, NC (NEW) -->
+<div class="reveal-elem is-visible">
+<div class="area-card-grid rounded-2xl overflow-hidden" onclick="location.href='#contact'">
+<img alt="Chapel Hill and Durham tree-lined residential community" height="768" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfWlAjfOqj1bPyx_b6qLDX-Jz_tHJ7sfbAFwls7jmx-QEGXUNPxhLKm0BtoSTyUXwvJNc0h8HZKJLJ9Tb3GX-mLZeXYUpHTs6oH-Sv0geofqMxi1zHvMC15LRVPD03_x4qETfCRbHj78rxQxIXhK7_NSgDmEcQxrcVmhNg2k_bUZ01gF9fisHKwRfTjDXX5Cx4gtSoQwLQtAOSuGilbvfkwpHba7eNvFeAOae_1e-t" width="1376">
+<div class="area-card-grid-body">
+<h3 class="area-card-grid-title">Chapel Hill / Durham, NC <i class="bi bi-arrow-up-right-circle text-warning fs-5"></i></h3>
+<p class="area-card-grid-note">Historic charm, world-class research triangle culture, and top medical centers.</p>
 </div>
 </div>
 </div>
@@ -1316,45 +1406,7 @@
 <p class="section-note">
           Direct, one-on-one accountability from consultation through closing.
         </p>
-<div class="row g-3">
-<!-- Agent 1: Nancy Grace -->
-<div class="col-12 reveal-elem is-visible">
-<div class="agent-card">
-<img alt="Nancy Grace Lead Realtor portrait" class="agent-avatar" height="86" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBNzDuud_Uy7QlbxXfm87itWaW86V2mMZDALD4rRLCik8EacxyPib74eMyvSUNpUV_DAbP4VZ_CHIJMsFJa0dRe4qgNcwwhh9cZaduvnh7osFC5kzTlShzQ_M9rkmJYPAAGO2tzbkCQJ9tSu0qMBvpJJtMn7cMmmjDiRz6i9mcKPA59f75d0KGW_PIW_TzRpdBlFgTsL5yXgN9PJRZu1_OokHyyckE5M79IdhI7RjinkGDpRYj99ndow" width="86">
-<div class="flex-grow-1">
-<h3 class="agent-name">Nancy Grace</h3>
-<div class="agent-role">Principal Realtor®</div>
-<div class="d-flex align-items-center gap-3">
-<a class="text-decoration-none text-muted small fw-semibold" href="tel:+19196164139">
-<i class="bi bi-telephone me-1 text-warning"></i> Call
-                  </a>
-<a class="text-decoration-none text-muted small fw-semibold" href="#contact">
-<i class="bi bi-envelope me-1 text-warning"></i> Email
-                  </a>
-</div>
-</div>
-</div>
-</div>
-<!-- Agent 2: Associate -->
-<!-- SAMPLE: replace with real data -->
-<div class="col-12 reveal-elem is-visible">
-<div class="agent-card">
-<img alt="Nancy Grace team associate" class="agent-avatar" height="86" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ8vjOOP5hFUDYnIvBzg7z5DeDshOiGAjk_NKDViP-wT1pTZlNNVy7ZvdP2cOVRHw3VCWt8O6BbchPn0z9mX5BnYkKzUqdfiw63B0qZtF6rBN-WCesEBRXvctdB-ZgwhTHhcW9bea4fcNOF5fAuNYASMWwI9PFtqDeJsgibUBNh9E-tvc9ohyiSKXlNf8tQVmmoHwYcdYrIBFHrG4wyCUg0p-4mqdDWjcVsFxOome7hAD8n_hD1vgWyw" width="86">
-<div class="flex-grow-1">
-<h3 class="agent-name">Marcus Vance</h3>
-<div class="agent-role">Client Coordinator</div>
-<div class="d-flex align-items-center gap-3">
-<a class="text-decoration-none text-muted small fw-semibold" href="tel:+19196164139">
-<i class="bi bi-telephone me-1 text-warning"></i> Call
-                  </a>
-<a class="text-decoration-none text-muted small fw-semibold" href="#contact">
-<i class="bi bi-calendar-event me-1 text-warning"></i> Schedule
-                  </a>
-</div>
-</div>
-</div>
-</div>
-</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="reveal-elem is-visible"><div class="agent-card flex-column text-center justify-content-center p-4 h-full"><img alt="Nancy Grace Lead Realtor portrait" class="agent-avatar rounded-circle mb-3" height="86" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBNzDuud_Uy7QlbxXfm87itWaW86V2mMZDALD4rRLCik8EacxyPib74eMyvSUNpUV_DAbP4VZ_CHIJMsFJa0dRe4qgNcwwhh9cZaduvnh7osFC5kzTlShzQ_M9rkmJYPAAGO2tzbkCQJ9tSu0qMBvpJJtMn7cMmmjDiRz6i9mcKPA59f75d0KGW_PIW_TzRpdBlFgTsL5yXgN9PJRZu1_OokHyyckE5M79IdhI7RjinkGDpRYj99ndow" width="86"><div class="w-100"><h3 class="agent-name">Nancy Grace</h3><div class="agent-role">Principal Realtor®</div><div class="d-flex align-items-center justify-content-center gap-3 mt-2"><a class="text-decoration-none text-muted small fw-semibold" href="tel:+19196164139"><i class="bi bi-telephone me-1 text-warning"></i> Call</a><a class="text-decoration-none text-muted small fw-semibold" href="#contact"><i class="bi bi-envelope me-1 text-warning"></i> Email</a></div></div></div></div><div class="reveal-elem is-visible"><div class="agent-card flex-column text-center justify-content-center p-4 h-full"><img alt="Nancy Grace team associate" class="agent-avatar rounded-circle mb-3" height="86" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ8vjOOP5hFUDYnIvBzg7z5DeDshOiGAjk_NKDViP-wT1pTZlNNVy7ZvdP2cOVRHw3VCWt8O6BbchPn0z9mX5BnYkKzUqdfiw63B0qZtF6rBN-WCesEBRXvctdB-ZgwhTHhcW9bea4fcNOF5fAuNYASMWwI9PFtqDeJsgibUBNh9E-tvc9ohyiSKXlNf8tQVmmoHwYcdYrIBFHrG4wyCUg0p-4mqdDWjcVsFxOome7hAD8n_hD1vgWyw" width="86"><div class="w-100"><h3 class="agent-name">Marcus Vance</h3><div class="agent-role">Client Coordinator</div><div class="d-flex align-items-center justify-content-center gap-3 mt-2"><a class="text-decoration-none text-muted small fw-semibold" href="tel:+19196164139"><i class="bi bi-telephone me-1 text-warning"></i> Call</a><a class="text-decoration-none text-muted small fw-semibold" href="#contact"><i class="bi bi-calendar-event me-1 text-warning"></i> Schedule</a></div></div></div></div></div>
 </div>
 </section>
 <!-- REVIEWS SECTION -->
@@ -1369,53 +1421,7 @@
           Real stories from families across Apex and Cary.
         </p>
 <!-- SAMPLE: replace with real data -->
-<div class="row">
-<div class="col-12 reveal-elem is-visible">
-<div class="review-card">
-<div class="text-warning small mb-1">
-<i class="bi bi-star-fill"></i>
-<i class="bi bi-star-fill"></i>
-<i class="bi bi-star-fill"></i>
-<i class="bi bi-star-fill"></i>
-<i class="bi bi-star-fill"></i>
-</div>
-<blockquote class="review-quote">
-                "Nancy sold our home above list price within two days. Phenomenal care."
-              </blockquote>
-<div class="reviewer-meta">— Sarah M., Apex</div>
-</div>
-</div>
-<div class="col-12 reveal-elem is-visible">
-<div class="review-card">
-<div class="text-warning small mb-1">
-<i class="bi bi-star-fill"></i>
-<i class="bi bi-star-fill"></i>
-<i class="bi bi-star-fill"></i>
-<i class="bi bi-star-fill"></i>
-<i class="bi bi-star-fill"></i>
-</div>
-<blockquote class="review-quote">
-                "Calm, responsive, and incredibly knowledgeable about Triangle neighborhood pricing."
-              </blockquote>
-<div class="reviewer-meta">— David K., Cary</div>
-</div>
-</div>
-<div class="col-12 reveal-elem is-visible">
-<div class="review-card">
-<div class="text-warning small mb-1">
-<i class="bi bi-star-fill"></i>
-<i class="bi bi-star-fill"></i>
-<i class="bi bi-star-fill"></i>
-<i class="bi bi-star-fill"></i>
-<i class="bi bi-star-fill"></i>
-</div>
-<blockquote class="review-quote">
-                "Her guidance made buying our first North Carolina home effortless."
-              </blockquote>
-<div class="reviewer-meta">— Elena R., Raleigh</div>
-</div>
-</div>
-</div>
+<div class="row"><div class="col-12 reveal-elem is-visible"><div class="review-card text-center"><div class="text-warning small mb-1 justify-content-center d-flex gap-1"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><blockquote class="review-quote">"Nancy sold our home above list price within two days. Phenomenal care."</blockquote><div class="reviewer-meta">Sarah M., Apex</div></div></div><div class="col-12 reveal-elem is-visible"><div class="review-card text-center"><div class="text-warning small mb-1 justify-content-center d-flex gap-1"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><blockquote class="review-quote">"Calm, responsive, and incredibly knowledgeable about Triangle neighborhood pricing."</blockquote><div class="reviewer-meta">David K., Cary</div></div></div><div class="col-12 reveal-elem is-visible"><div class="review-card text-center"><div class="text-warning small mb-1 justify-content-center d-flex gap-1"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><blockquote class="review-quote">"Her guidance made buying our first North Carolina home effortless."</blockquote><div class="reviewer-meta">Elena R., Raleigh</div></div></div></div>
 </div>
 </section>
 <!-- CONTACT SECTION -->
@@ -1430,37 +1436,11 @@
           Get in touch today for personalized neighborhood consultation.
         </p>
 <!-- Big Phone Number and Primary CTA -->
-<div class="p-3 rounded-3 text-center mb-4 border" style="background-color: var(--color-surface);">
-<div class="text-muted small text-uppercase fw-bold mb-1">Direct Realtor Line</div>
-<a class="d-block font-heading fw-bold text-dark text-decoration-none fs-3 mb-2" href="tel:+19196164139">
-            919.616.4139
-          </a>
-<a class="btn-brand-primary w-100" href="tel:+19196164139">Book a viewing</a>
-</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4"><div class="flex flex-col gap-3"><div class="p-3 rounded-3 text-center border" style="background-color: var(--color-surface);"><div class="text-muted small text-uppercase fw-bold mb-1">Direct Realtor Line</div><a class="d-block font-heading fw-bold text-dark text-decoration-none fs-3 mb-2" href="tel:+19196164139">919.616.4139</a><a class="btn-brand-primary w-100" href="tel:+19196164139">Book a viewing</a></div><div class="p-3 rounded-3 border flex-grow-1" style="background-color: var(--color-bg-warm);"><div class="fw-bold small mb-2 text-dark"><i class="bi bi-clock me-1 text-warning"></i> Office Hours</div><div class="small text-muted mb-1">Monday – Saturday: 9:00 AM – 6:00 PM</div><div class="small text-muted mb-3">Sunday: By appointment</div><div class="fw-bold small mb-1 text-dark"><i class="bi bi-geo-alt me-1 text-warning"></i> Primary Location</div><address class="small text-muted mb-0">Downtown Apex &amp; Triangle Region, NC 27502</address></div></div><div><form class="p-3 rounded-3 border h-full" id="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Nancy Grace will contact you within 2 business hours.');" style="background-color: #ffffff;"><div class="mb-3"><label class="form-label small fw-semibold" for="contact-name">Your Name</label><input class="form-control rounded-pill px-3 py-2 border" id="contact-name" placeholder="Jane Doe" required="" type="text"></div><div class="mb-3"><label class="form-label small fw-semibold" for="contact-info">Phone or Email</label><input class="form-control rounded-pill px-3 py-2 border" id="contact-info" placeholder="jane@example.com" required="" type="text"></div><div class="mb-3"><label class="form-label small fw-semibold" for="contact-msg">Brief Note</label><textarea class="form-control rounded-3 px-3 py-2 border" id="contact-msg" placeholder="Interested in Bella Casa viewing" rows="2"></textarea></div><button class="btn btn-brand-primary w-100" type="submit">Send inquiry</button></form></div></div>
 <!-- Minimal Form: Name, Phone/Email, Message -->
-<form class="mb-4" id="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Nancy Grace will contact you within 2 business hours.');">
-<div class="mb-3">
-<label class="form-label small fw-semibold" for="contact-name">Your Name</label>
-<input class="form-control rounded-pill px-3 py-2 border" id="contact-name" placeholder="Jane Doe" required="" type="text">
-</div>
-<div class="mb-3">
-<label class="form-label small fw-semibold" for="contact-info">Phone or Email</label>
-<input class="form-control rounded-pill px-3 py-2 border" id="contact-info" placeholder="jane@example.com" required="" type="text">
-</div>
-<div class="mb-3">
-<label class="form-label small fw-semibold" for="contact-msg">Brief Note</label>
-<textarea class="form-control rounded-3 px-3 py-2 border" id="contact-msg" placeholder="Interested in Bella Casa viewing" rows="2"></textarea>
-</div>
-<button class="btn btn-brand-primary w-100" type="submit">Send inquiry</button>
-</form>
+
 <!-- Hours & Local Details -->
-<div class="p-3 rounded-3 border mb-4" style="background-color: var(--color-bg-warm);">
-<div class="fw-bold small mb-2 text-dark"><i class="bi bi-clock me-1 text-warning"></i> Office Hours</div>
-<div class="small text-muted mb-1">Monday – Saturday: 9:00 AM – 6:00 PM</div>
-<div class="small text-muted mb-3">Sunday: By appointment</div>
-<div class="fw-bold small mb-1 text-dark"><i class="bi bi-geo-alt me-1 text-warning"></i> Primary Location</div>
-<address class="small text-muted mb-0">Downtown Apex &amp; Triangle Region, NC 27502</address>
-</div>
+
 <!-- Embedded Google Map (Lazy loaded) -->
 <div class="rounded-3 overflow-hidden border mb-3" style="height: 190px;">
 <iframe allowfullscreen="" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51785.452601720235!2d-78.88746765042618!3d35.732731804256245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acf4b6dbb69cbb%3A0xc3c94d0dc6a241cb!2sApex%2C%20NC!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" style="border:0;" title="Nancy Grace Realtor Apex NC Service Area" width="100%">
@@ -1500,7 +1480,7 @@
 <div class="position-absolute top-0 start-50 translate-middle-x mt-3 px-3 py-1.5 rounded-pill d-flex align-items-center gap-2" style="background: rgba(18, 33, 48, 0.82); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px); z-index: 1075; max-width: 86vw;">
 <span class="text-white-50 text-xs text-uppercase tracking-wider font-semibold" id="lightboxCategory">Photo Preview</span>
 <span class="text-white-50">•</span>
-<span class="badge rounded-pill text-xs font-mono px-2 py-0.5" id="lightboxCounter" style="background: rgba(196, 130, 63, 0.85); color: #ffffff;">1 / 4</span>
+<span class="badge rounded-pill text-xs font-mono px-2 py-0.5" id="lightboxCounter" style="background: rgba(196, 130, 63, 0.85); color: #ffffff;">1 / 6</span>
 </div>
 <!-- Center Stage Container -->
 <div class="d-flex align-items-center justify-content-center w-100 px-2 px-md-4 mt-4">
@@ -1580,7 +1560,7 @@
       ],
       listing: [
         {
-          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCjpsRk-LcXGGxCm86s6Iot3YRLHIUwWb1XbobJvnh-6TLFs_JVCO05b3T9jE26i1Q4kyrMn2p7_dLCYwq-jRxVF-tWjRo7mmy41GQb2rOn3-1WWxMDvxw7fpC43gnvCupLUNM9Pvtt0VLFny9-ldUgm4CbBfzc0OQglBg0j5dzngYgU9eTpsoiWwjV8h6Q-NWr4n5aHEjg8RD0QuzHWskHw8RDsE_7qfR68C61Gxt7",
+          src: "https://lh3.googleusercontent.com/aida/ALJJyrDq_mS-Ci9YWRc39fiIwC5EJ_QPpeYntsPLSGC4uAQ8GjGCVk6yHjBQZwSZOuWtat3RdCremmo1x7p401kudoz7ulMhXLw2IFeoCk80B2mMGeszUdRT76iMiufx7UbhZ3KX0lmFDMvgYk4pH8OxQN5qTCDDY1PiG2vK83fMXzM_DjAfpBuH8J2BF7NcmZvHR5znZKKChWzTXh1E5dtDnM0c_B6EGRJ474A76Nmh8FKK",
           title: "Bella Casa Craftsman",
           price: "$789,000",
           location: "Apex, NC",
@@ -1593,7 +1573,7 @@
           isListing: true
         },
         {
-          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBx_P0TePXpWvq5NqFjDixTZaWxS0vPLuzyq3CJfDlBz2HYZKaez2TR6Bw8dYb1pPaU5KjC8qLspp4sWnBq2Km_ob7oXrv2IX5kExXLk3LZRIDGo3LE4zNADVhW0PlNMgGA9IKDdvKy9M34gAE0sG2yjiHseWrHD5u0mbHmZF036T6zyxlAEPtuYSmBa_HhDHqhtv_OgfWVH2rYYGALY56yVKu4KE4jbbQt9ZlNZtTH",
+          src: "https://lh3.googleusercontent.com/aida/ALJJyrAs5h1ha2p1Z9zVwWkbYqXRMKCqzrbzMPLDZfgip4IfjaEgH1W8aWRMgKiCGyE2f72JLNIEQiUIOH70M3n473I_mP9Nt8iCNkDvWfYuNTowSPr-UL_d8zffcCZLRKCKz5uRJ3O8SOuB-A4gzsNvI3j4Ew_wwOD8ik8RU6R7UlPtVMPk7aOGMiPSi2SrfYjiwUxDu6S8uxp7xAye6-5XGGpuRb_IlB4oIb--1i-Imzvr",
           title: "Historic District Colonial",
           price: "$845,000",
           location: "Downtown Apex",
@@ -1606,7 +1586,7 @@
           isListing: true
         },
         {
-          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuB6QQwK0GI70jJNFOzOSld_tekQc1ED9N4aJxzfEAACpmt5LuxlKtOSkoR-GFXWYgO2c6vXlq1MHMirfC54z3h0E3WTQMX-lt1dj5X0p7BxO9EGe9UR-LFCHynpAIEgxJr0Fbtdh7iZX_G6Z1hjdbgNG-jRj3Xzn4JG41deL44cag2cA5MaGi1xgfxl96foXlmVlVd4x_8TrM1e90mN1C6zF4P5a_q7qNwMTep-fNRw",
+          src: "https://lh3.googleusercontent.com/aida/ALJJyrAgtBlSrfZnAwUC6oGG5wILRD_40HenYSqek03hY2j5C3l5vJsMTJixZUc1likAYzMZ_BITjzF3GePiDo29-rzvX7Ap7aRHcYT36d9uVYzMGAjqLPIGNWBtoskj1erZpHY4S6Z4pNoJcHoUKmK5CjLe3R0TmKyrIk-Swh0YeNX1Ki1WPOp9P7B7B5PuUkaxcrUeowLMDZ7sjira0Gj7B0YCLm76ax7BdcPBxavCa7GItw",
           title: "Weatherstone Modern Traditional",
           price: "$625,000",
           location: "Cary, NC",
@@ -1619,7 +1599,7 @@
           isListing: true
         },
         {
-          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuD762UR5oiISEhmQcQL218nISbGjE8qUvoAvnpgElprq56XHbczSA3g_3H7ecUy2Dle9U9uif42FPx4sCIDpyZZdXXvLvXictlPQvjhsmY6aM_mulXdAs-eaoezr9TEl5IhithKi44HvOnboWRjQAhIQOQozUwP9a0c0ZiI4pKSd61375vO3hiZ6JCTNifZo-g-ThGHFs6x6ak9qQUmrhPSXLKUp68xkKeOR-fNqX6O",
+          src: "https://lh3.googleusercontent.com/aida/ALJJyrAdo2at2q0-aoYC9LX0BxUeuKh4Eb84kFwFig-GgoEusJ0L1Py3lTm7R4wbl3bSlIQxRBmSPZEb2yyzWD3X-6df5grf9Pt88-iID6K9yFXRHtDoRepeATTyyiTL1UeQSyi6vZHeCP0dPIs2yrT2uxR6KXZoV20RytR2NsskInLwOwDgzQTl29qnjHX7nKqxLiU9XSogRRYs1hK5gwrzeaYEs4rJONxLao9lhpd8Q99t9g",
           title: "Preston Golf Estate",
           price: "$1,120,000",
           location: "Preston, Cary",
@@ -1629,6 +1609,32 @@
           baths: "4.5 Baths",
           sqft: "4,350 sq ft",
           subtext: "Preston, Cary • $1,120,000",
+          isListing: true
+        },
+        {
+          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDfWlAjfOqj1bPyx_b6qLDX-Jz_tHJ7sfbAFwls7jmx-QEGXUNPxhLKm0BtoSTyUXwvJNc0h8HZKJLJ9Tb3GX-mLZeXYUpHTs6oH-Sv0geofqMxi1zHvMC15LRVPD03_x4qETfCRbHj78rxQxIXhK7_NSgDmEcQxrcVmhNg2k_bUZ01gF9fisHKwRfTjDXX5Cx4gtSoQwLQtAOSuGilbvfkwpHba7eNvFeAOae_1e-t",
+          title: "The Oaks Custom Manor",
+          price: "$985,000",
+          location: "Chapel Hill, NC",
+          status: "Just listed",
+          statusClass: "primary",
+          beds: "5 Beds",
+          baths: "4.5 Baths",
+          sqft: "3,820 sq ft",
+          subtext: "Chapel Hill, NC • $985,000",
+          isListing: true
+        },
+        {
+          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuD7SSwuOFzGfq4jjwgJh9mb0xYlJ0HWFLiq0dp4T22UgD0j1VrUnbu6b0Ug0qN-Zc3YNy3dfIqkxLDerMkhddMgUeqlStlB3qnrs409WS4FaFNpA6JavPYy83iHlDAk9b-tRi8yzkrJWdKrBReaH3EuSAbpOV03UNEfTyxX1-0iURxYBXtCzWv7vFf2so82T2dIfi8qgcYKjFLdxUb0BCVhGBLyW-l0EZksfLX-Vs5_",
+          title: "Heritage Modern Farmhouse",
+          price: "$740,000",
+          location: "Wake Forest, NC",
+          status: "New listing",
+          statusClass: "primary",
+          beds: "4 Beds",
+          baths: "3 Baths",
+          sqft: "2,950 sq ft",
+          subtext: "Wake Forest, NC • $740,000",
           isListing: true
         }
       ]
@@ -1880,42 +1886,6 @@
       }, { passive: true });
     });
   </script>
-<!--
-  ========================================================================
-  SEO & DEPLOYMENT COMMENT BLOCK
-  ========================================================================
-  ROBOTS.TXT:
-  User-agent: *
-  Allow: /
-  Sitemap: https://www.nancygracehomes.com/sitemap.xml
-
-  SITEMAP.XML SNIPPET:
-  <?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-      <loc>https://www.nancygracehomes.com/</loc>
-      <lastmod>2026-11-11</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>1.0</priority>
-    </url>
-  </urlset>
-
-  LAUNCH CHECKLIST:
-  [x] Mobile-first viewport & typography configured
-  [x] Transparent header with left drawer & Menu button implemented
-  [x] 3 to 7 word headline, 10 words or fewer container constraint strictly enforced
-  [x] Consistent CTA "Book a viewing" in Hero, Nav, Listings, and Contact
-  [x] RealEstateAgent schema & FAQPage JSON-LD integrated
-  [x] Sample data commented with <!-- SAMPLE: replace with real data -->
-  [x] Versatile photo gallery lightbox supporting both community photos &amp; high-resolution property listing previews
-  [x] Inquire / Schedule tour CTA integration inside listing lightbox
-  [x] Vanilla JS scroll observer, progress indicator, and modal interactions
-  ========================================================================
-  --&gt;
-
-
-
-
 
 
 </body></html>
